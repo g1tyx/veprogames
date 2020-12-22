@@ -39,7 +39,7 @@ class AbstractUpgrade
         {
             return "x" + functions.formatNumber(this.apply(), 2, 2);
         }
-        return "x" + functions.formatNumber(this.getEffect(this.level), 2, 2) + " 🠚 " +
+        return "x" + functions.formatNumber(this.getEffect(this.level), 2, 2) + " → " +
             "x" + functions.formatNumber(this.getEffect(this.level.add(1)), 2, 2);
     }
 

@@ -26,6 +26,8 @@ var cnItems = {
 
     //升级
     'Max': '最大',
+    'Boost the Production Boost of Generators per 10 Levels': '增加每10级发生器的产量',
+    'It boosts stuff. Sadly I have no idea what exactly it boosts :(': '它可以使其他的东西变得更强。但很遗憾您还不知道它能使什么变得更强。',
 
     //阿列夫升级
     'Increase your Aleph gain': '增加阿列夫的获取数量',
@@ -82,7 +84,7 @@ var cnPrefix = {
     " ": " ",
     ": ": "： ",
     "\n": "",
-    "and ": " 与 ",
+    "and ": "与",
     "                   ": "",
     "                  ": "",
     "                 ": "",
@@ -160,8 +162,12 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
-    [/^Boost (.+) Production$/, '增加$1产量'], //升级
+    [/^Boost (.+) Production$/, '增加$1的产量'], //升级
     [/^Boost Production of Generators (.+)$/, '以下发生器产量增加：$1'], //升级
+    [/^Boost Prestige Reward on Layer (.+)$/, '增加层级$1的转生奖励'], //升级
+    [/^Boost (.+) Production based on Time spent this (.+)$/, '根据本次$2经过的时间，增加$1的产量'], //升级
+    [/^Boost all (.+) Generators based on time spent this (.+)$/, '根据本次$2经过的时间，增加$1的所有发生器产量'], //升级
+    [/^All (.+) Generators are stronger based on time spent this (.+)$/, '根据本次$2经过的时间，$1的所有发生器产量变得更高'], //升级
     [/^All Upgrade and Simple Boost Effects are raised to the Power of(.*)$/, '所有升级和简单加成的效果变为该数值为幂的指数:$1'], //挑战
     [/^All Generator and Upgrade Prices are raised to the Power of (.+). Power Effects are raised to the Power of(.*)$/, '所有能量发生器和升级的价格变为该数值为幂的指数: $1。能量效果变为该数值为幂的指数:$2'], //挑战
     [/^All Generator Multipliers are raised to the Power of(.*)$/, '所有发生器倍率变为该数值为幂的指数:$1'], //挑战
