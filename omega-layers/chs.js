@@ -29,6 +29,8 @@ var cnItems = {
     'Website': '官方网站地址',
     'Generators': '发生器',
     'Upgrades': '升级',
+    'Power': '能量',
+    'Challenges': '挑战',
     'Statistics': '统计',
     'Generator': '发生器',
     'Amount': '数量',
@@ -98,6 +100,8 @@ var cnItems = {
     'It is recommended to Export often': '强烈建议您经常导出备份存档',
     'Prestige': '转生',
     'Simple Boost': '简单加成',
+    'Power Generators': '能量发生器',
+    'Power Generators work like Generators, but they produce Power. Power boosts other Layers and help ramping those numbers up!': '能量发生器跟发生器类似，但它们产生的是能量。能量可以提升其他层级的效果，帮助它们的数字增长到更大！',
 
     //原样
     '': '',
@@ -237,4 +241,6 @@ var cnRegReplace = new Map([
     [/^Once you reach (.+) α, you can reset your current progress to get 1 β, which(\s+)can be spent on various things to make progress faster. You will gain your second β at about (.+) α$/, '当您拥有$1α时，您就可以重置目前的进度，然后获得1β了，您可以将它用在不同的地方来加快进度。您可以在$3α时获得第2个β'], //教程
     [/^With Automators, you can automate the Game to your liking. For example, they can Prestige and Maximize Layers(\s+)automatically. You can also set a desired interval, which you can use if you want to make them slower. For example, with a desired(\s+)interval of 3 seconds, the automator will never be faster than 3 seconds.$/, '只要拥有自动器，您就可以按照喜好来进行自动操作了。例如，可以利用它们来自动转生和最大化层级。您还可以设置一个生效时间间隔，这样可以让它们更晚生效。例如，如果将生效时间间隔设置为3秒，则自动器永远不会在时间间隔小于3秒的情况下生效。'], //教程
     [/^If you see a message below the amount of Resource you have, the Layer has a "Simple Boost". Simple Boost boosts the first Alpha Generator, resulting in much higher numbers. The Boost you get is based on the current Resource you(\s+)have.$/, '如果您在拥有的资源数量下方看到一条消息，则说明该层级拥有了 简单加成 。简单加成使第一个阿尔法发生器的效果变得更好，从而使数字变得更大。简单加成的数值与您当前拥有的资源数量有关。'], //教程
+    [/^Challenges are a way to increase your production. While active, they pose a penalty to your production, and you have(\s+)to reach a certain goal. When the Goal is reached, you get a reward form completing the Challenge.$/, '通过挑战可以增加产量。当进行挑战时，会对产量造成一定的负面效果，您必须达到特定的目标后才能完成挑战。完成挑战后，您可以获得一定的奖励。'], //教程
+    [/^Are you tired of clicking Prestige all the time\? Now you can make layers non-volatile, resulting in them never resetting and instead(\s+)giving a part of their Prestige Reward every second. Later on, Layers can also max themselves automatically.$/, '整天都得手动按转生，您是不是有点烦了？现在您可以使层级不再不定，永不重置了。此后，它们将每秒给予一部分转生奖励。之后，层级还可以自动进行最大化。'], //教程
 ]);
