@@ -11,8 +11,12 @@
 var cnItems = {
     _OTHER_: [],
 
+    //标点处理：
+    '.': '。',
+
     //主界面等：
     'Initializing...': '初始化中……',
+    'Loading Savegame...': '读取已保存的游戏存档……',
     'Layers': '层级',
     'Achievements': '成就',
     'Guide': '教程',
@@ -23,7 +27,10 @@ var cnItems = {
     'ReStack': '重新堆叠',
     'Max All (M': '最大化所有(M',
     'Website': '官方网站地址',
-    'Loading Savegame...': '读取已保存的游戏存档……',
+    'Generator': '发生器',
+    'Amount': '数量',
+    'Buy': '购买',
+    'Buy Until': '一次性购买',
     'Desired Interval': '生效时间间隔',
     'Seconds': '秒',
     'Active': '是否生效',
@@ -53,6 +60,9 @@ var cnItems = {
     //挑战
     'That\'s weird. Something\'s different...': '奇怪，有什么东西不一样了……',
     'A Cake.': '蛋糕。',
+    'You are currently in Challenge': '您目前进行的是挑战',
+    'Leave Challenge': '退出挑战',
+    'Completed!': '已完成！',
     'Goal': '目标',
 
     //多重层级
