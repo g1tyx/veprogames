@@ -90,6 +90,9 @@ var cnItems = {
     //教程
     'Getting Started': '开始吧',
     'To start, click the  \"+1 α\" button until you have 10 α. With 10 α, you can buy a Generator α': '首先，先点击 +1α 按钮，直到您一共获得了10α。这样您就可以购买发生器α',
+    'Export & Import': '导出和导入存档',
+    'In the Settings Menu, you can Export and Import your Game, allowing you to keep it somewhere safe.': '在设置菜单中，您可以导出和导入您的存档，以备不时之需。',
+    'It is recommended to Export often': '强烈建议您经常导出备份存档',
 
     //原样
     '': '',
@@ -222,5 +225,6 @@ var cnRegReplace = new Map([
     [/^Reward: Prestige Reward of Layer (.+) is x(.+) higher$/, '奖励: 层级$1的转生奖励变为$2倍'], //挑战
     [/^Reward: All Alpha Generators are x(.+) stronger$/, '奖励: 阿尔法发生器的效果变为$1倍'], //挑战
     [/^In Omega Layers, your Goal is to produce Resources \(e.g. α\) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
-    [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '了，它会每秒产生1 α。继续购买发生器可以提升α产量。'], //教程
+    [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '了，它会每秒产生1α。继续购买发生器可以提升α产量。'], //教程
+    [/^.(\s+)Browser Storage isn't the most reliable thing. You may share Export Codes in my Discord Server, if you want.$/, '。浏览器缓存不一定可靠。如果有需要，您也可以与他人分享存档。'], //教程
 ]);
