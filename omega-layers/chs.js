@@ -25,6 +25,8 @@ var cnItems = {
     'Loading Savegame...': '读取已保存的游戏存档……',
     'Your highest Layer is': '您最高到达的层级是',
     'Production': '产量',
+    'You need to go': '您需要到达过',
+    'at least once to produce': '才可以产生',
 
     //升级
     'Max': '最大',
@@ -151,6 +153,7 @@ var cnExcludeWhole = [
     /^\d+(\.\d+)?(e[+\-]?\d+)?.?\(?([+\-]?(\d+(\.\d+)?(e[+\-]?\d+)?)?)?$/, //2.177e+6 (+4.01+4
     /^(\d+(\.\d+)?(e[+\-]?\d+)?\/s)?.?\(?([+\-]?(\d+(\.\d+)?(e[+\-]?\d+)?)?)?\/s\stot$/, //2.177e+6/s (+4.01+4/s tot
     /^(\d+)?\.?(\d+)?e?[\d\,]*\s\([\d\,]*$/, //处理不该抓取的数字
+    /^[\d\,]*\,$/, //处理不该抓取的数字
     /^x\s?\d+\.\d+e[\d\,]*$/, //处理不该抓取的数字
     /^(.+)→(.*)$/, //误抓取的内容
     /^奖励：(.+)$/, //误抓取的内容
@@ -166,9 +169,9 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
-    [/^You have (.+)$/, '您拥有$1'], //主界面等
-    [/^You get (.+)$/, '您可获得$1'], //主界面等
-    [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍加成：'], //主界面等
+    [/^You have(.*)$/, '您拥有$1'], //主界面等
+    [/^You get(.*)$/, '您可获得$1'], //主界面等
+    [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成：'], //主界面等
     [/^Boost (.+) Production$/, '增加$1的产量'], //升级
     [/^Boost Production of Generators (.+)$/, '以下发生器产量增加：$1'], //升级
     [/^Boost Prestige Reward on Layer (.+)$/, '增加层级$1的转生奖励'], //升级
