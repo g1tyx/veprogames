@@ -21,13 +21,16 @@ var cnItems = {
     'Volatility': '不定性',
     'Aleph': '阿列夫',
     'ReStack': '重新堆叠',
+    'Max All (M': '最大化所有(M',
     'Website': '官方网站地址',
     'Loading Savegame...': '读取已保存的游戏存档……',
+    'Desired Interval': '生效时间间隔',
+    'Seconds': '秒',
+    'Active': '是否生效',
     'Your highest Layer is': '您最高到达的层级是',
     'Production': '产量',
     'You need to go': '您需要到达过',
     'at least once to produce': '才可以产生',
-    'Max All (M': '最大化所有(M',
     'Enhancers': '增强升级',
 
     //升级
@@ -50,6 +53,7 @@ var cnItems = {
     //挑战
     'That\'s weird. Something\'s different...': '奇怪，有什么东西不一样了……',
     'A Cake.': '蛋糕。',
+    'Goal': '目标',
 
     //多重层级
     'Increase the Resource Multiplier': '增加资源倍率',
@@ -159,6 +163,20 @@ var cnExcludeWhole = [
     /^x\s?\d+\.\d+e[\d\,]*$/, //处理不该抓取的数字
     /^(.+)→(.*)$/, //误抓取的内容
     /^奖励：(.+)$/, //误抓取的内容
+    /^打开微信扫一扫$/, //误抓取的内容
+    /^点击加群$/, //误抓取的内容
+    /^更多同类游戏$/, //误抓取的内容
+    /^关注公众号$/, //误抓取的内容
+    /^旧版$/, //误抓取的内容
+    /^论坛$/, //误抓取的内容
+    /^您拥有$/, //误抓取的内容
+    /^所有能量发生器和升级的价格变为该数值为幂的指数(.*)$/, //误抓取的内容
+    /^所有升级和简单加成的效果变为该数值为幂的指数(.*)$/, //误抓取的内容
+    /^以下发生器产量增加(.*)$/, //误抓取的内容
+    /^与(.*)$/, //误抓取的内容
+    /^增加(.+)的产量$/, //误抓取的内容
+    /^Git游戏$/, //误抓取的内容
+    /^QQ群号$/, //误抓取的内容
 ];
 var cnExcludePostfix = [
     /:?\s*x?\d+(\.\d+)?(e[+\-]?\d+)?\s*$/, //12.34e+4
@@ -174,7 +192,7 @@ var cnRegReplace = new Map([
     [/^You have(.*)$/, '您拥有$1'], //主界面等
     [/^You get(.*)$/, '您可获得$1'], //主界面等
     [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成：'], //主界面等
-    [/^Boost on (.+) Production$/, '增加$1的产量'], //升级
+    [/^Boost on (.+) Production$/, '$1的产量'], //升级
     [/^Boost (.+) Production$/, '增加$1的产量'], //升级
     [/^Boost Production of Generators (.+)$/, '以下发生器产量增加：$1'], //升级
     [/^Boost Prestige Reward on Layer (.+)$/, '增加层级$1的转生奖励'], //升级
