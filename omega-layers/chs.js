@@ -31,6 +31,7 @@ var cnItems = {
     'Upgrades': '升级',
     'Power': '能量',
     'Challenges': '挑战',
+    'Upgrade Tree': '升级树',
     'Statistics': '统计',
     'Generator': '发生器',
     'Amount': '数量',
@@ -76,11 +77,11 @@ var cnItems = {
 
     //重新堆叠
     'All Prestige gains are higher': '增加所有转生资源的获取数量',
-    'The Layer Exponential Factor increases over time': '层级的指数因子随着时间而增加',
+    'The Layer Exponential Factor increases over time': '层级指数因子随着时间而增加',
     'All Upgrade Effects are stronger (including Tree Upgrades': '所有的升级效果变得更好(包括树的升级',
     'All Power Generators are stronger': '所有能量发生器的效果变得更好',
     '"Increase your Aleph gain" Upgrade scales better': '“增加阿列夫获取数量”的升级效果变得更好',
-    'The Layer Exponential Factor is higher': '增加层级的指数因子',
+    'The Layer Exponential Factor is higher': '增加层级指数因子',
     'All your Layer Resources are multiplied each second': '所有层级的资源乘以秒数',
     'Resource Multipliers are stronger': '资源倍率效果变得更好',
     'Resource Multiplier Upgrades are stronger based on time spent this ReStack': '根据本次重新堆叠经过的时间，使资源倍率升级的效果变得更好',
@@ -102,6 +103,10 @@ var cnItems = {
     'Simple Boost': '简单加成',
     'Power Generators': '能量发生器',
     'Power Generators work like Generators, but they produce Power. Power boosts other Layers and help ramping those numbers up!': '能量发生器跟发生器类似，但它们产生的是能量。能量可以提升其他层级的效果，帮助它们的数字增长到更大！',
+    'Layer Exponential Factor': '层级指数因子',
+    'With a Layer Exponential Factor of 24, it would be: xe10, xe240, xe5760, ...': '层级指数因子为24时，则是：e10倍，e240倍，e5760倍，依此类推……',
+    'With a Layer Exponential Factor of 30, it would be: xe10, xe300, xe9000, ...': '层级指数因子为30时，则是：e10倍，e300倍，e9000倍，依此类推……',
+    'This applies to basically everything like certain challenge rewards, Upgrade Effects and Power Boosts.': '它几乎对所有相关参数都有效，例如特定的挑战奖励，升级效果及能量加成等。',
 
     //原样
     '': '',
@@ -243,4 +248,7 @@ var cnRegReplace = new Map([
     [/^If you see a message below the amount of Resource you have, the Layer has a "Simple Boost". Simple Boost boosts the first Alpha Generator, resulting in much higher numbers. The Boost you get is based on the current Resource you(\s+)have.$/, '如果您在拥有的资源数量下方看到一条消息，则说明该层级拥有了 简单加成 。简单加成使第一个阿尔法发生器的效果变得更好，从而使数字变得更大。简单加成的数值与您当前拥有的资源数量有关。'], //教程
     [/^Challenges are a way to increase your production. While active, they pose a penalty to your production, and you have(\s+)to reach a certain goal. When the Goal is reached, you get a reward form completing the Challenge.$/, '通过挑战可以增加产量。当进行挑战时，会对产量造成一定的负面效果，您必须达到特定的目标后才能完成挑战。完成挑战后，您可以获得一定的奖励。'], //教程
     [/^Are you tired of clicking Prestige all the time\? Now you can make layers non-volatile, resulting in them never resetting and instead(\s+)giving a part of their Prestige Reward every second. Later on, Layers can also max themselves automatically.$/, '整天都得手动按转生，您是不是有点烦了？现在您可以使层级不再不定，永不重置了。此后，它们将每秒给予一部分转生奖励。之后，层级还可以自动进行最大化。'], //教程
+    [/^After going δ at least once, you can gain Aleph, allowing you to buy Upgrades that globally boost the game.(\s+)You gain 10x more Aleph for every new Layer you unlock after δ.$/, '获得过δ之后，您就可以开始获得阿列夫了，您可以使用它来购买全局生效的升级。在δ之后，每解锁一个新的层级，阿列夫的获取数量就变为之前的10倍。'], //教程
+    [/^The Layer Exponential Factor determines the exponential difference between 2 Layers. For example, with a Layer Exponential Factor(\s+)of 22, a Simple Boost of xe10 on a Layer means xe220 on 1 Layer later, xe4840 2 Layers later and so on.$/, '层级指数因子决定了两个层级之间的指数差异。例如，如果层级指数因子为22，一个层级上的简单加成为e10倍，则下一个层级的简单加成变为e220倍，下两个层级的简单加成变为e4840倍，依此类推。'], //教程
+    [/^Upgrade Trees provide time-based Upgrades. You have to pick a path while buying them, but you can respec to pick a new one. This(\s+)won't give back spent resource! Automators don't assume a path, so you will have to pick one manually.$/, '升级树提供跟时间有关的升级。您只能从多条路径中选择一条，但您可以在洗点后重新选择一条。请注意，洗点不会返还任何资源！自动器不会选择路径，所以您需要手动先选择一条，然后自动器才会生效。'], //教程
 ]);
