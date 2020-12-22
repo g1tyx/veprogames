@@ -18,26 +18,35 @@ var cnItems = {
     'Guide': '教程',
     'Settings': '设置',
     'Automators': '自动器',
-    'Volatility': '波动率',
+    'Volatility': '不定性',
     'Aleph': '阿列夫',
     'ReStack': '重新堆叠',
     'Website': '官方网站地址',
+    'Loading Savegame...': '读取已保存的游戏存档……',
+
+    //阿列夫升级
+    'Increase your Aleph gain': '增加阿列夫的获取数量',
+    'Get a Bonus to Aleph gain': '阿列夫的获取数量得到一个加成',
+    'Gain more Aleph based on the log(ℵ) you have': '根据拥有的log(ℵ)，增加阿列夫的获取数量',
+    'Gain more δ': '增加δ的获取数量',
+    'All Power Generators on every Layer are stronger': '每个层级的能量发生器效果更好',
+    'Increase Prestige Reward on all Layers that don\'t have Power Generators': '增加没有能量发生器的所有层级的转生奖励',
+    'Gain more Aleph based on the log(log(α)) you have': '根据拥有的log(log(α))，增加阿列夫的获取数量',
+    'The β Prestige Formula is better': 'β转生的公式变得更好',
+    'Increase the Prestige Reward of all Layers': '增加所有层级的转生奖励',
+    'Increase the exponential difference of boosts between layers, resulting in a large boost!': '使各层之间的加成指数变得更高，从而增加加成总量！',
+
+    //挑战
+    'All Upgrade and Simple Boost Effects are raised to the Power of': '所有升级和简单加成的效果变为该数值为幂的指数：',
+    'All Generator Multipliers are raised to the Power of ': '所有发生器倍率变为该数值为幂的指数：',
+    'All Prestige Rewards are raised to the Power of': '所有转生奖励变为该数值为幂的指数：',
+    'That\'s weird. Something\'s different...': '奇怪，有什么东西不一样了……',
+    'A Cake.': '蛋糕。',
     '': '',
     '': '',
     '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
+
+
 
     //原样
     '': '',
@@ -131,10 +140,9 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
-    [/^requires ([\d\.]+) more research points$/, '需要$1个研究点'],
-    [/^(\d+) Royal points$/, '$1 皇家点数'],
-    [/^Cost: (\d+) RP$/, '成本：$1 皇家点数'],
-    [/^Usages: (\d+)\/$/, '用途：$1\/'],
-    [/^workers: (\d+)\/$/, '工人：$1\/'],
-
+    [/^All Generator and Upgrade Prices are raised to the Power of (.+). Power Effects are raised to the Power of$/, '所有能量发生器和升级的价格变为该数值为幂的指数： $1。能量效果变为该数值为幂的指数：'], //挑战
+    [/^All Power Generators are x(.+) stronger$/, '所有能量发生器的效果变为$1倍'], //挑战
+    [/^All Generator Multiplicators per 10 Levels are \+(.+) better$/, '所有发生器倍率每10级增加$1'], //挑战
+    [/^Prestige Reward of Layer (.+) is x(.+) higher$/, '层级$1的转生奖励变为$2倍'], //挑战
+    [/^All Alpha Generators are x(.+) stronger$/, '阿尔法发生器的效果变为$1倍'], //挑战
 ]);
