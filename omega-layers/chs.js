@@ -27,11 +27,13 @@ var cnItems = {
     'Production': '产量',
     'You need to go': '您需要到达过',
     'at least once to produce': '才可以产生',
+    'Max All (M': '最大化所有(M',
+    'Enhancers': '增强升级',
 
     //升级
     'Max': '最大',
     'Boost the Production Boost of Generators per 10 Levels': '增加每10级发生器的产量',
-    'It boosts stuff. Sadly I have no idea what exactly it boosts :(': '它可以使其他的东西变得更强。但很遗憾您还不知道它能使什么变得更强。',
+    'It boosts stuff. Sadly I have no idea what exactly it boosts :(': '它可以使其他的东西变得更强。但很遗憾您还不知道它能使什么变得更强 :(',
 
     //阿列夫升级
     'Increase your Aleph gain': '增加阿列夫的获取数量',
@@ -56,7 +58,7 @@ var cnItems = {
     //重新堆叠
     'All Prestige gains are higher': '增加所有转生资源的获取数量',
     'The Layer Exponential Factor increases over time': '层级的指数因子随着时间而增加',
-    'All Upgrade Effects are stronger (including Tree Upgrades)': '所有的升级效果变得更好(包括树的升级)',
+    'All Upgrade Effects are stronger (including Tree Upgrades': '所有的升级效果变得更好(包括树的升级',
     'All Power Generators are stronger': '所有能量发生器的效果变得更好',
     '"Increase your Aleph gain" Upgrade scales better': '“增加阿列夫获取数量”的升级效果变得更好',
     'The Layer Exponential Factor is higher': '增加层级的指数因子',
@@ -172,6 +174,7 @@ var cnRegReplace = new Map([
     [/^You have(.*)$/, '您拥有$1'], //主界面等
     [/^You get(.*)$/, '您可获得$1'], //主界面等
     [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成：'], //主界面等
+    [/^Boost on (.+) Production$/, '增加$1的产量'], //升级
     [/^Boost (.+) Production$/, '增加$1的产量'], //升级
     [/^Boost Production of Generators (.+)$/, '以下发生器产量增加：$1'], //升级
     [/^Boost Prestige Reward on Layer (.+)$/, '增加层级$1的转生奖励'], //升级
