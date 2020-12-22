@@ -222,4 +222,5 @@ var cnRegReplace = new Map([
     [/^Reward: Prestige Reward of Layer (.+) is x(.+) higher$/, '奖励: 层级$1的转生奖励变为$2倍'], //挑战
     [/^Reward: All Alpha Generators are x(.+) stronger$/, '奖励: 阿尔法发生器的效果变为$1倍'], //挑战
     [/^In Omega Layers, your Goal is to produce Resources (e.g. α) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
+    [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '，它会每秒产生1 α。继续购买发生器可以提升α产量。'], //教程
 ]);
