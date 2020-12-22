@@ -21,6 +21,7 @@ var cnItems = {
     'Achievements': '成就',
     'Guide': '教程',
     'Settings': '设置',
+    'Reach': '到达',
     'Automators': '自动器',
     'Volatility': '不定性',
     'Aleph': '阿列夫',
@@ -221,7 +222,12 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
+    [/^You have made a total of(.*)$/, '您总共拥有$1'], //主界面及层级等
+    [/^You have gone(.*)$/, '您已经进行过$1'], //主界面及层级等
     [/^You have(.*)$/, '您拥有$1'], //主界面及层级等
+    [/^The highest you ever had is(.*)$/, '您最高拥有过$1'], //主界面及层级等
+    [/^You spent (.+) this(.*)$/, '您经过了$1于此$2'], //主界面及层级等
+    [/^(.+) Times$/, '转生$1次'], //主界面及层级等
     [/^You get(.*)$/, '您可获得$1'], //主界面及层级等
     [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成：'], //主界面及层级等
     [/^Boost on (.+) Production$/, '$1的产量'], //升级
