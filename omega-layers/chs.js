@@ -46,6 +46,8 @@ var cnItems = {
     'You need to go': '您需要到达过',
     'at least once to produce': '才可以产生',
     'Enhancers': '增强升级',
+    'Resource Multipliers': '资源倍率',
+    'Resource Powerers': '资源强化',
 
     //升级
     'Max': '最大',
@@ -109,6 +111,28 @@ var cnItems = {
     'With a Layer Exponential Factor of 30, it would be: xe10, xe300, xe9000, ...': '层级指数因子为30时，则是：e10倍，e300倍，e9000倍，依此类推……',
     'This applies to basically everything like certain challenge rewards, Upgrade Effects and Power Boosts.': '它几乎对所有相关参数都有效，例如特定的挑战奖励，升级效果及能量加成等。',
     'Meta': '元',
+
+    //滚动新闻
+    'Every Incremental needs a News Ticker': '增量游戏就该有滚动新闻',
+    '1.79769313e308 / 10 -IGN': 'IGN评分：1.79769313e308 / 10',
+    'Powered by RNG': '随机数生产器荣誉出品',
+    'Maybe there are new News here? Nope, just the old news...': '这有新的一点的新闻吗？不不，只有旧闻……',
+    'The Number limit is above 10↑↑308, good luck!': '数字上限超过了10↑↑308，祝您好运！',
+    'Your ad here': '广告虚位以待',
+    'ζ is Fake News!': 'ζ完全是假新闻！',
+    'Suggest more messages in the Discord!': '有建议欢迎来Discord上提出！',
+    'The Cell is the Powerhouse of the Mitochondria': '细胞才是线粒体的动力源',
+    '"where is the potato layer ?!" - some pig dude': '“土豆层级哪去了？！”————某个大概是猪头娃的家伙',
+    '"Imagine quoting your name on your news ticker" - ???': '“想象一下在滚动新闻中引用到你的名字会如何”————？？？',
+    '"if you hit a wall, keep hitting" -winston churchill': '“纵为至暗时刻，终有形势反转”————温X顿 丘X尔',
+    'Die, frickin pie - PewDiePie': '给爷死啊，该死的馅饼————PewDiePie',
+    'This definitly beats Mega Layers! -RΨZΞΠ 9 935ΘX': '这显然比米茄层级好！————RΨZΞΠ 9 935ΘX',
+    'hey, I bet this isnt a newsticker. Or is it?': '说白了这根本就不是滚动新闻吧喂？',
+    '(╯°□°）╯︵ ┻━┻   -   TableFlipper': '(╯°□°）╯︵ ┻━┻   ————   掀桌',
+    'Don\'t click the X at the top right, it\'s a game breaking bug!': '请不要点击右上角的X，这会导致游戏运行不正常的！',
+    'Nerf This!': '来削我呀！',
+    'To nerf, or not to nerf. That is the Question!': '削，还是不削。值得考虑！',
+    'A news ticker. How original.': '这是滚动新闻。多有创意嘛。',
 
     //原样
     '': '',
@@ -228,6 +252,10 @@ var cnRegReplace = new Map([
     [/^The highest you ever had is(.*)$/, '您最高拥有过$1'], //主界面及层级等
     [/^You spent (.+) this(.*)$/, '您经过了$1于此$2'], //主界面及层级等
     [/^(.+) Times$/, '转生$1次'], //主界面及层级等
+    [/^You have approx.(.*)$/, '您大概拥有$1'], //主界面及层级等
+    [/^You are on Layer(.*)$/, '您在层级$1'], //主界面及层级等
+    [/^Your Resource multiplies by x(.+) each second$/, '您的资源倍率每秒变为$1倍'], //主界面及层级等
+    [/^and thus advancing (.+) Layers per second$/, '因此每秒前进$1个层级'], //主界面及层级等
     [/^You get(.*)$/, '您可获得$1'], //主界面及层级等
     [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成：'], //主界面及层级等
     [/^Boost on (.+) Production$/, '$1的产量'], //升级
@@ -260,4 +288,8 @@ var cnRegReplace = new Map([
     [/^Upgrade Trees provide time-based Upgrades. You have to pick a path while buying them, but you can respec to pick a new one. This(\s+)won't give back spent resource! Automators don't assume a path, so you will have to pick one manually.$/, '升级树提供跟时间有关的升级。您只能从多条路径中选择一条，但您可以在洗点后重新选择一条。请注意，洗点不会返还任何资源！自动器不会选择路径，所以您需要手动先选择一条，然后自动器才会生效。'], //教程
     [/^After unlocking κ, you are able to ReStack. This resets all progress so far in exchange for Layer Coins, which can be spent(\s+)on powerful Upgrades. If you feel like you took the wrong Path on the permanent Upgrades, you can respec. You will get all spent Layer Coins back but you do(\s+)a ReStack without any rewards. ReStack yields 10x more Layer Coins for every new Layer unlocked.$/, '解锁κ以后，您就可以进行重新堆叠了。这将重置之前的所有进度，但您可以获得层级币，您可以用它来购买一些强大的升级。如果您觉得自己选择了错误的永久升级路径，您可以进行洗点。洗点后将全额返还所有层级币，但您将自动进行一次无奖励的重新堆叠。每解锁一个新的层级，层级币获取数量就变为之前的10倍。'], //教程
     [/^You just woke up from the Layer dream and realized that a new Layer is just another Layer. You can now buy Upgrades to increase your Resource(\s+)multiplier and climb Layers faster. ReStack is still available, so check that out! There is a new Upgrade Tree waiting to be upgraded.$/, '您已经从层级的幻梦中苏醒过来，现在对您来说，一个新的层级不过就是层级罢了。您现在可以购买增加资源倍率的升级了，它们可以使您更快地提升层级。重新堆叠仍然有效，请注意这一点！同时也出现了一个新的升级树。'], //教程
+    [/^This Number is randomly generated -> (.+). If it's above 1,000, consider yourself lucky!$/, '此数字为随机生成的 -> $1。如果它大于1000，说明您的运气相当好！'], //滚动新闻
+    [/^get Layer (.+) now \[working 2020\]$/, '点此直接解锁$1层级[2020年内有效]'], //滚动新闻
+    [/^(.+) α\? That's rookie numbers$/, '$1α？这数字弱爆了'], //滚动新闻
+    [/^Motto of the Day: (.+)$/, '每日箴言：(译者注：作者没有吃药，这边的内容无法翻译，各位就当这里不存在，完毕)'], //滚动新闻
 ]);
