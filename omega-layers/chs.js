@@ -89,7 +89,7 @@ var cnItems = {
 
     //教程
     'Getting Started': '开始吧',
-    'To start, click the  \"+1 α\" button until you have 10 α. With 10 α, you can buy a Generator α': '首先，先点击 +1α 按钮，直到您一共获得了10α。这样您就可以购买发生器α了',
+    'To start, click the  \"+1 α\" button until you have 10 α. With 10 α, you can buy a Generator α': '首先，先点击 +1α 按钮，直到您一共获得了10α。这样您就可以购买发生器α',
 
     //原样
     '': '',
@@ -221,6 +221,6 @@ var cnRegReplace = new Map([
     [/^Reward: All Generator Multiplicators per 10 Levels are \+(.+) better$/, '奖励: 所有发生器倍率每10级增加$1'], //挑战
     [/^Reward: Prestige Reward of Layer (.+) is x(.+) higher$/, '奖励: 层级$1的转生奖励变为$2倍'], //挑战
     [/^Reward: All Alpha Generators are x(.+) stronger$/, '奖励: 阿尔法发生器的效果变为$1倍'], //挑战
-    [/^In Omega Layers, your Goal is to produce Resources (e.g. α) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
-    [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '，它会每秒产生1 α。继续购买发生器可以提升α产量。'], //教程
+    [/^In Omega Layers, your Goal is to produce Resources \(e.g. α\) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
+    [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '了，它会每秒产生1 α。继续购买发生器可以提升α产量。'], //教程
 ]);
