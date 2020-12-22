@@ -27,7 +27,13 @@ var cnItems = {
     'Aleph': '阿列夫',
     'ReStack': '重新堆叠',
     'Max All (M': '最大化所有(M',
+    'Discord': 'Discord地址',
     'Website': '官方网站地址',
+    'This translates to a': '因此增加了',
+    'Boost on': '加成，作用于',
+    'Respec to reset all the Upgrades, but you don\'t get the spent': '洗点可以重置所有升级，但您不会获得',
+    'back!': '返还！',
+    'Prestige to go': '转生以提升',
     'Generators': '发生器',
     'Upgrades': '升级',
     'Power': '能量',
@@ -117,7 +123,7 @@ var cnItems = {
     '1.79769313e308 / 10 -IGN': 'IGN评分：1.79769313e308 / 10',
     'Powered by RNG': '随机数生产器荣誉出品',
     'Maybe there are new News here? Nope, just the old news...': '这有新的一点的新闻吗？不不，只有旧闻……',
-    'The Number limit is above 10↑↑308, good luck!': '数字上限超过了10↑↑308，祝您好运！',
+    'The Number limit is above 10↑↑308, good luck!': '数字上限超过10↑↑308，祝您好运！',
     'Your ad here': '广告虚位以待',
     'ζ is Fake News!': 'ζ完全是假新闻！',
     'Suggest more messages in the Discord!': '有建议欢迎来Discord上提出！',
@@ -249,6 +255,8 @@ var cnRegReplace = new Map([
     [/^You have made a total of(.*)$/, '您总共拥有$1'], //主界面及层级等
     [/^You have gone(.*)$/, '您已经进行过$1'], //主界面及层级等
     [/^You have(.*)$/, '您拥有$1'], //主界面及层级等
+    [/^Get \+(.*)$/, '可获得$1'], //主界面及层级等
+    [/^Power,(\s+)translated to a$/, '能量，因此增加了'], //主界面及层级等
     [/^The highest you ever had is(.*)$/, '您最高拥有过$1'], //主界面及层级等
     [/^You spent (.+) this(.*)$/, '您经过了$1于此$2'], //主界面及层级等
     [/^(.+) Times$/, '转生$1次'], //主界面及层级等
