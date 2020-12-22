@@ -14,7 +14,7 @@ var cnItems = {
     //标点处理：
     '.': '。',
 
-    //主界面等：
+    //主界面及层级等：
     'Initializing...': '初始化中……',
     'Loading Savegame...': '读取已保存的游戏存档……',
     'Layers': '层级',
@@ -27,6 +27,9 @@ var cnItems = {
     'ReStack': '重新堆叠',
     'Max All (M': '最大化所有(M',
     'Website': '官方网站地址',
+    'Generators': '发生器',
+    'Upgrades': '升级',
+    'Statistics': '统计',
     'Generator': '发生器',
     'Amount': '数量',
     'Buy': '购买',
@@ -206,9 +209,9 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
-    [/^You have(.*)$/, '您拥有$1'], //主界面等
-    [/^You get(.*)$/, '您可获得$1'], //主界面等
-    [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成：'], //主界面等
+    [/^You have(.*)$/, '您拥有$1'], //主界面及层级等
+    [/^You get(.*)$/, '您可获得$1'], //主界面及层级等
+    [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成：'], //主界面及层级等
     [/^Boost on (.+) Production$/, '$1的产量'], //升级
     [/^Boost (.+) Production$/, '增加$1的产量'], //升级
     [/^Boost Production of Generators (.+)$/, '以下发生器产量增加：$1'], //升级
@@ -227,4 +230,6 @@ var cnRegReplace = new Map([
     [/^In Omega Layers, your Goal is to produce Resources \(e.g. α\) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
     [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '了，它会每秒产生1α。继续购买发生器可以提升α产量。'], //教程
     [/^.(\s+)Browser Storage isn't the most reliable thing. You may share Export Codes in my Discord Server, if you want.$/, '。浏览器缓存不一定可靠。如果有需要，您也可以与他人分享存档。'], //教程
+    [/^Generators produce Resources every second or other Generators. The first Generator produces Resources. The 2nd Generator produces(\s+)1st Generators, the 3rd Generator produces 2nd Generators and so on. You buy Generators with Resources$/, '发生器每秒产生资源或其他发生器。第1个发生器产生资源，第2个发生器产生第1个发生器，第3个发生器产生第2个发生器，依此类推。您需要使用资源来购买发生器'], //教程
+    [/^Upgrades improve several Aspects of the Game. For example, they help produce more Resource by making Generators stronger or increasing(\s+)Prestige Rewards.$/, '升级可以影响游戏的方方面面。比如，它们可以使发生器效果变得更好，或者使转生奖励变得更多，从而增加资源产量。'], //教程
 ]);
