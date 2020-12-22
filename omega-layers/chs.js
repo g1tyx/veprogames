@@ -51,6 +51,8 @@ var cnItems = {
     'Production': '产量',
     'You need to go': '您需要到达过',
     'at least once to produce': '才可以产生',
+    'Respec: get your spent': '洗点: 返还所有花费的',
+    'back, and do a ReStack without reward': '，但进行一次无奖励的重新堆叠',
     'Enhancers': '增强升级',
     'Resource Multipliers': '资源倍率',
     'Resource Powerers': '资源强化',
@@ -113,14 +115,14 @@ var cnItems = {
     'Power Generators': '能量发生器',
     'Power Generators work like Generators, but they produce Power. Power boosts other Layers and help ramping those numbers up!': '能量发生器跟发生器类似，但它们产生的是能量。能量可以提升其他层级的效果，帮助它们的数字增长到更大！',
     'Layer Exponential Factor': '层级指数因子',
-    'With a Layer Exponential Factor of 24, it would be: xe10, xe240, xe5760, ...': '层级指数因子为24时，则是：e10倍，e240倍，e5760倍，依此类推……',
-    'With a Layer Exponential Factor of 30, it would be: xe10, xe300, xe9000, ...': '层级指数因子为30时，则是：e10倍，e300倍，e9000倍，依此类推……',
+    'With a Layer Exponential Factor of 24, it would be: xe10, xe240, xe5760, ...': '层级指数因子为24时，则是: e10倍，e240倍，e5760倍，依此类推……',
+    'With a Layer Exponential Factor of 30, it would be: xe10, xe300, xe9000, ...': '层级指数因子为30时，则是: e10倍，e300倍，e9000倍，依此类推……',
     'This applies to basically everything like certain challenge rewards, Upgrade Effects and Power Boosts.': '它几乎对所有相关参数都有效，例如特定的挑战奖励，升级效果及能量加成等。',
     'Meta': '元',
 
     //滚动新闻
     'Every Incremental needs a News Ticker': '增量游戏就该有滚动新闻',
-    '1.79769313e308 / 10 -IGN': 'IGN评分：1.79769313e308 / 10',
+    '1.79769313e308 / 10 -IGN': 'IGN评分: 1.79769313e308 / 10',
     'Powered by RNG': '随机数生产器荣誉出品',
     'Maybe there are new News here? Nope, just the old news...': '这有新的一点的新闻吗？不不，只有旧闻……',
     'The Number limit is above 10↑↑308, good luck!': '数字上限超过10↑↑308，祝您好运！',
@@ -225,7 +227,7 @@ var cnExcludeWhole = [
     /^[\d\,]*\,$/, //处理不该抓取的数字
     /^x\s?\d+\.\d+e[\d\,]*$/, //处理不该抓取的数字
     /^(.+)→(.*)$/, //误抓取的内容
-    /^奖励：(.+)$/, //误抓取的内容
+    /^奖励: (.+)$/, //误抓取的内容
     /^打开微信扫一扫$/, //误抓取的内容
     /^点击加群$/, //误抓取的内容
     /^更多同类游戏$/, //误抓取的内容
@@ -235,6 +237,9 @@ var cnExcludeWhole = [
     /^您拥有$/, //误抓取的内容
     /^所有能量发生器和升级的价格变为该数值为幂的指数(.*)$/, //误抓取的内容
     /^所有升级和简单加成的效果变为该数值为幂的指数(.*)$/, //误抓取的内容
+    /^所有发生器倍率变为该数值为幂的指数(.*)$/, //误抓取的内容
+    /^所有转生奖励变为该数值为幂的指数(.*)$/, //误抓取的内容
+    /^可获得$/, //误抓取的内容
     /^以下发生器产量增加(.*)$/, //误抓取的内容
     /^与(.*)$/, //误抓取的内容
     /^增加(.+)的产量$/, //误抓取的内容
@@ -265,10 +270,10 @@ var cnRegReplace = new Map([
     [/^Your Resource multiplies by x(.+) each second$/, '您的资源倍率每秒变为$1倍'], //主界面及层级等
     [/^and thus advancing (.+) Layers per second$/, '因此每秒前进$1个层级'], //主界面及层级等
     [/^You get(.*)$/, '您可获得$1'], //主界面及层级等
-    [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成：'], //主界面及层级等
+    [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成: '], //主界面及层级等
     [/^Boost on (.+) Production$/, '$1的产量'], //升级
     [/^Boost (.+) Production$/, '增加$1的产量'], //升级
-    [/^Boost Production of Generators (.+)$/, '以下发生器产量增加：$1'], //升级
+    [/^Boost Production of Generators (.+)$/, '以下发生器产量增加: $1'], //升级
     [/^Boost Prestige Reward on Layer (.+)$/, '增加层级$1的转生奖励'], //升级
     [/^Boost (.+) Production based on Time spent this (.+)$/, '根据本次$2经过的时间，增加$1的产量'], //升级
     [/^Boost all (.+) Generators based on time spent this (.+)$/, '根据本次$2经过的时间，增加$1的所有发生器产量'], //升级
@@ -299,5 +304,5 @@ var cnRegReplace = new Map([
     [/^This Number is randomly generated -> (.+). If it's above 1,000, consider yourself lucky!$/, '此数字为随机生成的 -> $1。如果它大于1000，说明您的运气相当好！'], //滚动新闻
     [/^get Layer (.+) now \[working 2020\]$/, '点此直接解锁$1层级[2020年内有效]'], //滚动新闻
     [/^(.+) α\? That's rookie numbers$/, '$1α？这数字弱爆了'], //滚动新闻
-    [/^Motto of the Day: (.+)$/, '每日箴言：(译者注：作者没有吃药，这边的内容无法翻译，各位就当这里不存在，完毕)'], //滚动新闻
+    [/^Motto of the Day: (.+)$/, '每日箴言: (译者注: 作者没有吃药，这边的内容无法翻译，各位就当这里不存在，完毕)'], //滚动新闻
 ]);
