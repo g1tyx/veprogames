@@ -34,7 +34,7 @@ var cnItems = {
     'Boost on': '加成，作用于',
     'Respec to reset all the Upgrades, but you don\'t get the spent': '洗点可以重置所有升级，但您不会获得',
     'back!': '返还！',
-    'Prestige to go': '转生以提升',
+    'Prestige to go': '转生以到达',
     'Generators': '发生器',
     'Upgrades': '升级',
     'Power': '能量',
@@ -118,7 +118,7 @@ var cnItems = {
     'Resource Powerers are stronger': '资源强化效果变得更好',
     'Your Layer gets substracted instead of reset when buying Upgrades': '购买升级时，您的层级会减去相应数值，而不是进行重置',
     'Resource Multipliers scale better to their level': '资源倍率根据等级效果变得更好',
-    'Other Times await...': '其他时间在等待着……',
+    'Other Times await...': '来生再会……',
     'Meta Upgrade': '元升级',
     'Respec': '洗点',
     'Check back after reaching': '到达这个以后再来吧:',
@@ -127,9 +127,29 @@ var cnItems = {
     //成就
     //Achievement Get: 成就名称
     'Starting Out': '启程出发',
-    'Reach 10 α': '到达10α',
     'The beginning of Idling': '放置之始',
-    'Have': '拥有',
+    'Polynomial Growth': '多项式增长',
+    'Still Polynomial Growth': '还是多项式增长',
+    'A Square of Generators': '发生器方形',
+    'Pentagen': '发生器五方',
+    'Power of Six': '我是六号',
+    'Seven Heaven': '第七天堂',
+    'Octacore': '八核',
+    'Upgradalicious': '优质升级',
+    'Stonks': '储备丰富',
+    'Other Times Await': '来生再会',
+    'POW': '能量',
+    'Polynomial POW': '多项式能量',
+    'In thousands': '数以千计',
+    'Other Times Arrived': '来生已至',
+    'Automatic!': '自动运转',
+
+    'Reach 10 α': '到达10α',
+    'Buy your first α Upgrade': '首次购买升级',
+    'Reach 1e18 α': '到达1e18α',
+    'Go β': '到达β',
+    'Go β 10 Times': '到达10次β',
+    'Enable the "Max All" Automator': '激活 自动化所有 自动器',
 
     //教程
     'Getting Started': '开始吧',
@@ -237,6 +257,8 @@ var cnPrefix = {
     ": ": "： ",
     "\n": "",
     "and ": "与",
+    "Have 1 ": "拥有1个", //成就
+    "Have over 1,000 ": "拥有超过1000个", //成就
     "                   ": "",
     "                  ": "",
     "                 ": "",
@@ -385,7 +407,7 @@ var cnRegReplace = new Map([
     [/^If you see a message below the amount of Resource you have, the Layer has a "Simple Boost". Simple Boost boosts the first Alpha Generator, resulting in much higher numbers. The Boost you get is based on the current Resource you(\s+)have.$/, '如果您在拥有的资源数量下方看到一条消息，则说明该层级拥有了 简单加成 。简单加成使第一个阿尔法发生器的效果变得更好，从而使数字变得更大。简单加成的数值与您当前拥有的资源数量有关。'], //教程
     [/^Challenges are a way to increase your production. While active, they pose a penalty to your production, and you have(\s+)to reach a certain goal. When the Goal is reached, you get a reward form completing the Challenge.$/, '通过挑战可以增加产量。当进行挑战时，会对产量造成一定的负面效果，您必须达到特定的目标后才能完成挑战。完成挑战后，您可以获得一定的奖励。'], //教程
     [/^Are you tired of clicking Prestige all the time\? Now you can make layers non-volatile, resulting in them never resetting and instead(\s+)giving a part of their Prestige Reward every second. Later on, Layers can also max themselves automatically.$/, '整天都得手动按转生，您是不是有点烦了？现在您可以使层级不再不定，永不重置了。此后，它们将每秒给予一部分转生奖励。之后，层级还可以自动进行最大化。'], //教程
-    [/^After going δ at least once, you can gain Aleph, allowing you to buy Upgrades that globally boost the game.(\s+)You gain 10x more Aleph for every new Layer you unlock after δ.$/, '获得过δ之后，您就可以开始获得阿列夫了，您可以使用它来购买全局生效的升级。在δ之后，每解锁一个新的层级，阿列夫的获取数量就变为之前的10倍。'], //教程
+    [/^After going δ at least once, you can gain Aleph, allowing you to buy Upgrades that globally boost the game.(\s+)You gain 10x more Aleph for every new Layer you unlock after δ.$/, '到达过δ之后，您就可以开始获得阿列夫了，您可以使用它来购买全局生效的升级。在δ之后，每解锁一个新的层级，阿列夫的获取数量就变为之前的10倍。'], //教程
     [/^The Layer Exponential Factor determines the exponential difference between 2 Layers. For example, with a Layer Exponential Factor(\s+)of 22, a Simple Boost of xe10 on a Layer means xe220 on 1 Layer later, xe4840 2 Layers later and so on.$/, '层级指数因子决定了两个层级之间的指数差异。例如，如果层级指数因子为22，一个层级上的简单加成为e10倍，则下一个层级的简单加成变为e220倍，下两个层级的简单加成变为e4840倍，依此类推。'], //教程
     [/^Upgrade Trees provide time-based Upgrades. You have to pick a path while buying them, but you can respec to pick a new one. This(\s+)won't give back spent resource! Automators don't assume a path, so you will have to pick one manually.$/, '升级树提供跟时间有关的升级。您只能从多条路径中选择一条，但您可以在洗点后重新选择一条。请注意，洗点不会返还任何资源！自动器不会选择路径，所以您需要手动先选择一条，然后自动器才会生效。'], //教程
     [/^After unlocking κ, you are able to ReStack. This resets all progress so far in exchange for Layer Coins, which can be spent(\s+)on powerful Upgrades. If you feel like you took the wrong Path on the permanent Upgrades, you can respec. You will get all spent Layer Coins back but you do(\s+)a ReStack without any rewards. ReStack yields 10x more Layer Coins for every new Layer unlocked.$/, '解锁κ以后，您就可以进行重新堆叠了。这将重置之前的所有进度，但您可以获得层级币，您可以用它来购买一些强大的升级。如果您觉得自己选择了错误的永久升级路径，您可以进行洗点。洗点后将全额返还所有层级币，但您将自动进行一次无奖励的重新堆叠。每解锁一个新的层级，层级币获取数量就变为之前的10倍。'], //教程
