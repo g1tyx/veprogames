@@ -143,13 +143,33 @@ var cnItems = {
     'In thousands': '数以千计',
     'Other Times Arrived': '来生已至',
     'Automatic!': '自动运转',
+    'Exploding Numbers': '数值爆炸',
+    'A big Boost': '巨大加成',
+    'A Square of Power': '能量方形',
+    'Another Layer?!': '又来一层？！',
+    'Other Times Await... Again': '来生……再再会',
+    'POγγ': 'γ的能量',
+    'The True Time': '真实时间',
+    'More Gamma, more Boost': '伽马既涨，加成当附',
+    'Huge Numbers': '巨额数字',
+    'How Challenging': '挑战就这',
+    'Persistence': '持续性',
 
     'Reach 10 α': '到达10α',
     'Buy your first α Upgrade': '首次购买升级',
     'Reach 1e18 α': '到达1e18α',
     'Go β': '到达β',
     'Go β 10 Times': '到达10次β',
-    'Enable the "Max All" Automator': '激活 自动化所有 自动器',
+    'Enable the "Max All" Automator': '激活 最大化所有 自动器',
+    'Reach 1e6 β': '到达1e6β',
+    'Reach 1e9 β-Power': '到达1e9β-能量',
+    'Reach 1e20 β': '到达1e20β',
+    'Go γ': '到达γ',
+    'Go γ 42 Times': '到达42次γ',
+    'Reach 1e6 γ': '到达1e6γ',
+    'Reach 1e100,000 α': '到达1e100000α',
+    'Beat Challenge y-01 at least once': '至少完成一次y-01挑战',
+    'Make Layer α Non-Volatile': '使层级α不再不定',
 
     //教程
     'Getting Started': '开始吧',
@@ -197,8 +217,8 @@ var cnItems = {
     'Export': '导出存档',
     'Import': '导入存档',
     'Wipe Game': '抹除游戏进度',
-    'Game Saved!': '游戏已保存存档！',
-    'Error Saving Game': '保存存档时发生错误',
+    'Game Saved!': '游戏已保存！',
+    'Error Saving Game': '保存时发生错误',
     'Error importing Game': '导入存档时发生错误',
     'Error loading save': '读取存档时发生错误',
     'Error loading Settings': '读取设置时发生错误',
@@ -372,7 +392,7 @@ var cnRegReplace = new Map([
     [/^Power,(\s+)translated to a$/, '能量，因此增加了'], //主界面及层级等
     [/^The highest you ever had is(.*)$/, '您最高拥有过$1'], //主界面及层级等
     [/^You spent (.+) this(.*)$/, '您经过了$1于此$2'], //主界面及层级等
-    [/^(.+) Times$/, '转生$1次'], //主界面及层级等
+    [/^(?!Go)(.+) Times$/, '转生$1次'], //主界面及层级等
     [/^You have approx.(.*)$/, '您大概拥有$1'], //主界面及层级等
     [/^You are on Layer(.*)$/, '您在层级$1'], //主界面及层级等
     [/^Your Resource multiplies by x(.+) each second$/, '您的资源倍率每秒变为$1倍'], //主界面及层级等
