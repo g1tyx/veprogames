@@ -325,7 +325,7 @@ var cnItems = {
     'Every Incremental needs a News Ticker': '增量游戏就该有滚动新闻',
     '1.79769313e308 / 10 -IGN': 'IGN评分: 1.79769313e308 / 10',
     'Powered by RNG': '随机数生成器荣誉出品',
-    'Maybe there are new News here? Nope, just the old news...': '这有新的一点的新闻吗？不不，只有旧闻……',
+    'Maybe there are new News here? Nope, just the old news...': '这有新一点的新闻吗？不不，只有旧闻……',
     'The Number limit is above 10↑↑308, good luck!': '数字上限可以超过10↑↑308，祝您好运！',
     'Your ad here': '广告虚位以待',
     'ζ is Fake News!': 'ζ完全是假新闻！',
