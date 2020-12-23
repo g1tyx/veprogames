@@ -87,6 +87,7 @@ var cnItems = {
     'Increase the Resource Power': '增加资源的指数',
 
     //重新堆叠
+    'Permanent Upgrades': '永久升级',
     'All Prestige gains are higher': '增加所有转生资源的获取数量',
     'The Layer Exponential Factor increases over time': '层级指数因子随着时间而增加',
     'All Upgrade Effects are stronger (including Tree Upgrades': '所有的升级效果变得更好(包括树的升级',
@@ -103,6 +104,14 @@ var cnItems = {
     'Your Layer gets substracted instead of reset when buying Upgrades': '购买升级时，您的层级会减去相应数值，而不是进行重置',
     'Resource Multipliers scale better to their level': '资源倍率根据等级效果变得更好',
     'Other Times await...': '其他时间在等待着……',
+    'Meta Upgrade': '元升级',
+    'Respec': '洗点',
+    'Check back after reaching': '到达这个以后再来吧:',
+    'I have woken up. I am now aware that a new Layer is just another layer. It is time to become meta.': '我已经醒悟了。一个新的层级不过就是层级罢了。是时候成为元了。',
+
+    //成就
+    //Achievement Get: 成就名称
+
 
     //教程
     'Getting Started': '开始吧',
@@ -119,6 +128,54 @@ var cnItems = {
     'With a Layer Exponential Factor of 30, it would be: xe10, xe300, xe9000, ...': '层级指数因子为30时，则是: e10倍，e300倍，e9000倍，依此类推……',
     'This applies to basically everything like certain challenge rewards, Upgrade Effects and Power Boosts.': '它几乎对所有相关参数都有效，例如特定的挑战奖励，升级效果及能量加成等。',
     'Meta': '元',
+
+    //设置
+    'Show all Layers': '显示所有层级',
+    'Show Layer Ordinals (α: #1, β: #2, ...': '显示层级序号(α: #1，β: #2，依此类推',
+    'Show first': '只显示最前面的',
+    'Show last': '只显示最后面的',
+    'Buy Max always buys until': '最大化所有时总是一次性购买',
+    'Disable Buy Max on highest unlocked Layer': '对最高的层级不使用最大化所有',
+    'Auto Max All': '自动最大化所有',
+    'Auto Prestige Highest Layer': '自动转生最高的层级',
+    'Allow Resource Colors': '启用资源颜色',
+    'Allow Resource Glow': '启用资源光亮',
+    'News Ticker': '启用滚动新闻',
+    'Notifications': '启用提示框',
+    'Save Notifications': '启用存档提示框',
+    'Confirmations': '启用确认窗口',
+    'Title Style': '标题显示内容',
+    'None': '无',
+    'Motd': '每日箴言',
+    'Current Layer': '当前层级',
+    'Offline Progress': '启用离线进度',
+    '(increases loading time': '(可能需要更多时间载入游戏',
+    'Theme': '游戏主题',
+    'Dark': '黑暗',
+    'Light': '明亮',
+    'Neon': '霓虹',
+    'Godot Blue': '暗蓝',
+    'Save Game': '保存游戏',
+    'Export': '导出存档',
+    'Import': '导入存档',
+    'Wipe Game': '抹除游戏进度',
+    'The exported Save String will appear here. Keep it somewhere safe.': '导出的游戏存档会出现在这里。请妥善保管。',
+    'Click Import to load the save string from the text field.': '在此处输入存档代码后，点击导入以导入游戏存档。(译者注：导入前请把这段话删了，否则会导入失败！)',
+    'Error importing Game': '导入存档时发生错误',
+    'What have you done...': '您在做什么……',
+    'Game Imported': '游戏存档已导入',
+    'Copy to Clipboard': '复制到剪贴板',
+    'Paste from Clipboard': '从剪贴板粘贴',
+    'Clear': '清空',
+    'Download as .txt': '下载为文本文档',
+    'Copied to Clipboard': '已复制到剪贴板',
+    'Controls: M to Max All on the selected Layer': '快捷键：按M可在当前层级最大化所有',
+    'Left and Right Arrows to change Layers': '按左右方向键可以切换层级',
+    'P to Prestige the selected Layer': '按P可以在当前层级进行转生',
+    'First Letter of a tab ([L]ayers, [V]olatility) to select it; C to select Achievements': '按选项卡的英文首字母可以选择它(如按L选择层级，按V选择不定性)，按C可以选择成就',
+    'Credits': '致谢名单(中文版由by22dgb汉化)',
+    'Inspiration: Antimatter Dimensions by hevipelle, Infinite Layers by dan-simon': '灵感来源：hevipelle制作的反物质维度，dan-simon制作的无限层级',
+    'Powered by vue.js and break eternity.js': '由vue.js和break eternity.js提供的技术支持',
 
     //滚动新闻
     'Every Incremental needs a News Ticker': '增量游戏就该有滚动新闻',
@@ -245,6 +302,13 @@ var cnExcludeWhole = [
     /^增加(.+)的产量$/, //误抓取的内容
     /^Git游戏$/, //误抓取的内容
     /^QQ群号$/, //误抓取的内容
+    /^能量，因此增加了$/, //误抓取的内容
+    /^您经过了(.*)于此$/, //误抓取的内容
+    /^您已经进行过$/, //误抓取的内容
+    /^您拥有(.*)$/, //误抓取的内容
+    /^您总共拥有(.*)$/, //误抓取的内容
+    /^您最高拥有过(.*)$/, //误抓取的内容
+    /^转生(.*)次$/, //误抓取的内容
 ];
 var cnExcludePostfix = [
     /:?\s*x?\d+(\.\d+)?(e[+\-]?\d+)?\s*$/, //12.34e+4
