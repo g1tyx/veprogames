@@ -163,6 +163,17 @@ var cnItems = {
     'Temperature': '温度',
     'Stack A-New!': '叠出一片新天地！',
     'H λ l f L i f e': '半 λ 条 λ 命',
+    'One for Everyone': '见者有份',
+    'What\'s the Point of Layers?': '层级的存在意义是什么？',
+    'Wake Up': '醒悟',
+    'Ω-Layers': 'Ω-层级',
+    'One for each Second': '一秒一个',
+    'The Ladder is Infinite': '无尽的阶梯',
+    'Stupidly fast': '快到发呆',
+    'What are Layer resets?': '层级重置是什么？',
+    'Faster than Light': '超越光速',
+    'It never Ends': '永不停息',
+    'Inf-Infinity': '超越无限',
 
     'Reach 10 α': '到达10α',
     'Buy your first α Upgrade': '首次购买升级',
@@ -189,6 +200,15 @@ var cnItems = {
     'Reach 1e1,000,000,000 α': '到达1e100000000α',
     'Go θ': '到达θ',
     'Go λ': '到达λ',
+    'Have 7,800,000,000 Layer Coins': '拥有7800000000层级币',
+    'Buy the Meta Upgrade': '购买元升级',
+    'Go Meta': '到达元',
+    'Reach Layer Ω': '到达层级Ω',
+    'Advance 1 Layer per second': '每秒前进1个层级',
+    'Reach Layer 1000': '到达层级1000',
+    'Advance 10 Layer per second': '每秒前进10个层级',
+    'Buy the ReStack Tree Upgrade in Row 5': '购买第5行的重新堆叠树升级',
+    'Advance ~300e9 Layers per second': '每秒前进约300e9个层级',
 
     //教程
     'Getting Started': '开始吧',
@@ -261,7 +281,7 @@ var cnItems = {
     '1.79769313e308 / 10 -IGN': 'IGN评分: 1.79769313e308 / 10',
     'Powered by RNG': '随机数生产器荣誉出品',
     'Maybe there are new News here? Nope, just the old news...': '这有新的一点的新闻吗？不不，只有旧闻……',
-    'The Number limit is above 10↑↑308, good luck!': '数字上限超过10↑↑308，祝您好运！',
+    'The Number limit is above 10↑↑308, good luck!': '数字上限可以超过10↑↑308，祝您好运！',
     'Your ad here': '广告虚位以待',
     'ζ is Fake News!': 'ζ完全是假新闻！',
     'Suggest more messages in the Discord!': '有建议欢迎来Discord上提出！',
@@ -298,6 +318,8 @@ var cnPrefix = {
     "and ": "与",
     "Have 1 ": "拥有1个", //成就
     "Have over 1,000 ": "拥有超过1000个", //成就
+    "Reach Layer 1e": "到达层级1e", //成就
+    "Reach Layer ~1.8e": "到达层级约1.8e", //成就
     "                   ": "",
     "                  ": "",
     "                 ": "",
@@ -406,13 +428,13 @@ var cnRegReplace = new Map([
     [/^You have made a total of(.*)$/, '您总共拥有$1'], //主界面及层级等
     [/^You have gone(.*)$/, '您已经进行过$1'], //主界面及层级等
     [/^You have unlocked (.+) \/ (.+) Achievements.$/, '一共有$2个成就，您解锁了其中的$1个成就。'], //成就，前置
+    [/^You have approx.(.*)$/, '您大概拥有$1'], //主界面及层级等
     [/^You have(.*)$/, '您拥有$1'], //主界面及层级等
     [/^Get \+(.*)$/, '可获得$1'], //主界面及层级等
     [/^Power,(\s+)translated to a$/, '能量，因此增加了'], //主界面及层级等
     [/^The highest you ever had is(.*)$/, '您最高拥有过$1'], //主界面及层级等
     [/^You spent (.+) this(.*)$/, '您经过了$1于此$2'], //主界面及层级等
     [/^(?!Go)(.+) Times$/, '转生$1次'], //主界面及层级等
-    [/^You have approx.(.*)$/, '您大概拥有$1'], //主界面及层级等
     [/^You are on Layer(.*)$/, '您在层级$1'], //主界面及层级等
     [/^Your Resource multiplies by x(.+) each second$/, '您的资源倍率每秒变为$1倍'], //主界面及层级等
     [/^and thus advancing (.+) Layers per second$/, '因此每秒前进$1个层级'], //主界面及层级等
