@@ -362,7 +362,7 @@ var cnRegReplace = new Map([
     [/^All (.+) Generators are stronger based on time spent this (.+)$/, '根据本次$2经过的时间，$1的所有发生器产量变得更高'], //升级
     [/^Inactive →(.*)s$/, '未生效 →$1秒'], //自动器
     [/^(.*)s →(.*)s$/, '$1秒 →$2秒'], //自动器
-    [/^"Volatility \(persistence\) allows you to make earlier Layers non-volatile. Non-volatile Layers(\s+)never reset and reward a percentage of the its prestige reward every second.$/, '不定性(持续性)可以使更早出现的层级变得不再不定。不再不定的层级永不重置，它们将每秒给予一部分转生奖励。'], //不定性
+    [/^Volatility \(persistence\) allows you to make earlier Layers non-volatile. Non-volatile Layers(\s+)never reset and reward a percentage of the its prestige reward every second.$/, '不定性(持续性)可以使更早出现的层级变得不再不定。不再不定的层级永不重置，它们将每秒给予一部分转生奖励。'], //不定性
     [/^All Upgrade and Simple Boost Effects are raised to the Power of(.*)$/, '所有升级和简单加成的效果变为该数值为幂的指数:$1'], //挑战
     [/^All Generator and Upgrade Prices are raised to the Power of (.+). Power Effects are raised to the Power of(.*)$/, '所有能量发生器和升级的价格变为该数值为幂的指数: $1。能量效果变为该数值为幂的指数:$2'], //挑战
     [/^All Generator Multipliers are raised to the Power of(.*)$/, '所有发生器倍率变为该数值为幂的指数:$1'], //挑战
