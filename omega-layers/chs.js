@@ -126,7 +126,10 @@ var cnItems = {
 
     //成就
     //Achievement Get: 成就名称
-
+    'Starting Out': '启程出发',
+    'Reach 10 α': '到达10α',
+    'The beginning of Idling': '放置之始',
+    'Have': '拥有',
 
     //教程
     'Getting Started': '开始吧',
@@ -341,6 +344,7 @@ var cnRegReplace = new Map([
     [/^You were offline for(.*)$/, '您总共离线了$1'], //主界面及层级等
     [/^You have made a total of(.*)$/, '您总共拥有$1'], //主界面及层级等
     [/^You have gone(.*)$/, '您已经进行过$1'], //主界面及层级等
+    [/^You have unlocked (.+) \/ (.+) Achievements.$/, '一共有$2个成就，您解锁了其中的$1个成就。'], //成就，前置
     [/^You have(.*)$/, '您拥有$1'], //主界面及层级等
     [/^Get \+(.*)$/, '可获得$1'], //主界面及层级等
     [/^Power,(\s+)translated to a$/, '能量，因此增加了'], //主界面及层级等
