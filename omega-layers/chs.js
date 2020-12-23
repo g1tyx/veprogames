@@ -17,6 +17,7 @@ var cnItems = {
     //主界面及层级等：
     'Initializing...': '初始化中……',
     'Loading Savegame...': '读取已保存的游戏存档……',
+    'Applying Offline Progress...': '计算离线进度并应用……',
     'Layers': '层级',
     'Achievements': '成就',
     'Guide': '教程',
@@ -109,6 +110,20 @@ var cnItems = {
     'Check back after reaching': '到达这个以后再来吧:',
     'I have woken up. I am now aware that a new Layer is just another layer. It is time to become meta.': '我已经醒悟了。一个新的层级不过就是层级罢了。是时候成为元了。',
 
+    //自动器
+    'Automatically buys max on all Layers': '在所有层级上自动最大化所有',
+    'Decrease the Automator interval': '减少自动器的生效时间间隔',
+    'Auto Prestige': '自动转生',
+    'Automatically prestiges all Layers': '在所有层级上自动转生',
+    'Auto Aleph': '自动阿列夫',
+    'Automatically Max All Aleph Upgrades': '自动最大化所有阿列夫升级',
+
+    //自动器
+    'Make the next Layer non-volatile': '使下一层不再不定',
+    'None →': '无 →',
+    'Boost the Prestige Reward you get per second': '增加每秒获得的转生奖励',
+    'The next Layer is maxed automatically each tick': '使下一层每个时刻自动最大化',
+
     //成就
     //Achievement Get: 成就名称
 
@@ -159,7 +174,11 @@ var cnItems = {
     'Export': '导出存档',
     'Import': '导入存档',
     'Wipe Game': '抹除游戏进度',
+    'Game Saved!': '游戏已保存存档！',
+    'Error Saving Game': '保存存档时发生错误',
     'Error importing Game': '导入存档时发生错误',
+    'Error loading save': '读取存档时发生错误',
+    'Error loading Settings': '读取设置时发生错误',
     'What have you done...': '您在做什么……',
     'Game Imported': '游戏存档已导入',
     'Copy to Clipboard': '复制到剪贴板',
@@ -281,7 +300,7 @@ var cnExcludeWhole = [
     /^(\d+)?\.?(\d+)?e?[\d\,]*\s\([\d\,]*$/, //处理不该抓取的数字
     /^[\d\,]*\,$/, //处理不该抓取的数字
     /^x\s?\d+\.\d+e[\d\,]*$/, //处理不该抓取的数字
-    /^(.+)→(.*)$/, //误抓取的内容
+    /^[\d\,\s]+→(.*)$/, //误抓取的内容
     /^奖励: (.+)$/, //误抓取的内容
     /^打开微信扫一扫$/, //误抓取的内容
     /^点击加群$/, //误抓取的内容
@@ -319,6 +338,7 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
+    [/^You were offline for(.*)$/, '您总共离线了$1'], //主界面及层级等
     [/^You have made a total of(.*)$/, '您总共拥有$1'], //主界面及层级等
     [/^You have gone(.*)$/, '您已经进行过$1'], //主界面及层级等
     [/^You have(.*)$/, '您拥有$1'], //主界面及层级等
@@ -348,6 +368,9 @@ var cnRegReplace = new Map([
     [/^Reward: All Generator Multiplicators per 10 Levels are \+(.+) better$/, '奖励: 所有发生器倍率每10级增加$1'], //挑战
     [/^Reward: Prestige Reward of Layer (.+) is x(.+) higher$/, '奖励: 层级$1的转生奖励变为$2倍'], //挑战
     [/^Reward: All Alpha Generators are x(.+) stronger$/, '奖励: 阿尔法发生器的效果变为$1倍'], //挑战
+    [/^Inactive →(.*)s$/, '未生效 →$1秒'], //自动器
+    [/^(.*)s →(.*)s$/, '$1秒 →$2秒'], //自动器
+    [/^"Volatility (persistence) allows you to make earlier Layers non-volatile. Non-volatile Layers(\s+)never reset and reward a percentage of the its prestige reward every second.$/, '不定性(持续性)可以使更早出现的层级变得不再不定。不再不定的层级永不重置，它们将每秒给予一部分转生奖励。'], //不定性
     [/^In Omega Layers, your Goal is to produce Resources \(e.g. α\) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
     [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '了，它会每秒产生1α。继续购买发生器可以提升α产量。'], //教程
     [/^.(\s+)Browser Storage isn't the most reliable thing. You may share Export Codes in my Discord Server, if you want.$/, '。浏览器缓存不一定可靠。如果有需要，您也可以与他人分享存档。'], //教程
