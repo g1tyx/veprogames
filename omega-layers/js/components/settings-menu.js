@@ -3,8 +3,8 @@ Vue.component("settings-menu", {
     {
         return {
             settings: game.settings,
-            exportString: "The exported Save String will appear here. Keep it somewhere safe." +
-                " Click Import to load the save string from the text field.",
+            exportString: "导出的游戏存档会出现在这里。请妥善保管。" +
+                " 在此处输入存档代码后，点击导入以导入游戏存档。(译者注：导入前请把这段话删了，否则会导入失败！)",
             themes: [["Dark", "dark.css"], ["Light", "light.css"], ["Neon", "neon.css"], ["Godot Blue", "darkblue.css"]]
         }
     },
