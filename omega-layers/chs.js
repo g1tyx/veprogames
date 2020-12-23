@@ -63,6 +63,20 @@ var cnItems = {
     'Boost the Production Boost of Generators per 10 Levels': '增加每10级发生器的产量',
     'It boosts stuff. Sadly I have no idea what exactly it boosts :(': '它可以使其他的东西变得更强。但很遗憾您还不知道它能使什么变得更强 :(',
 
+    //自动器
+    'Automatically buys max on all Layers': '在所有层级上自动最大化所有',
+    'Decrease the Automator interval': '减少自动器的生效时间间隔',
+    'Auto Prestige': '自动转生',
+    'Automatically prestiges all Layers': '在所有层级上自动转生',
+    'Auto Aleph': '自动阿列夫',
+    'Automatically Max All Aleph Upgrades': '自动最大化所有阿列夫升级',
+
+    //不定性
+    'Make the next Layer non-volatile': '使下一层不再不定',
+    'None → α': '无 → α',
+    'Boost the Prestige Reward you get per second': '增加每秒获得的转生奖励',
+    'The next Layer is maxed automatically each tick': '使下一层每个时刻自动最大化',
+
     //阿列夫升级
     'Increase your Aleph gain': '增加阿列夫的获取数量',
     'Get a Bonus to Aleph gain': '阿列夫的获取数量获得加成',
@@ -109,20 +123,6 @@ var cnItems = {
     'Respec': '洗点',
     'Check back after reaching': '到达这个以后再来吧:',
     'I have woken up. I am now aware that a new Layer is just another layer. It is time to become meta.': '我已经醒悟了。一个新的层级不过就是层级罢了。是时候成为元了。',
-
-    //自动器
-    'Automatically buys max on all Layers': '在所有层级上自动最大化所有',
-    'Decrease the Automator interval': '减少自动器的生效时间间隔',
-    'Auto Prestige': '自动转生',
-    'Automatically prestiges all Layers': '在所有层级上自动转生',
-    'Auto Aleph': '自动阿列夫',
-    'Automatically Max All Aleph Upgrades': '自动最大化所有阿列夫升级',
-
-    //自动器
-    'Make the next Layer non-volatile': '使下一层不再不定',
-    'None →': '无 →',
-    'Boost the Prestige Reward you get per second': '增加每秒获得的转生奖励',
-    'The next Layer is maxed automatically each tick': '使下一层每个时刻自动最大化',
 
     //成就
     //Achievement Get: 成就名称
@@ -210,7 +210,7 @@ var cnItems = {
     'Die, frickin pie - PewDiePie': '给爷死啊，该死的馅饼————PewDiePie',
     'This definitly beats Mega Layers! -RΨZΞΠ 9 935ΘX': '这显然比米茄层级好！————RΨZΞΠ 9 935ΘX',
     'hey, I bet this isnt a newsticker. Or is it?': '说白了这根本就不是滚动新闻吧喂？',
-    '(╯°□°）╯︵ ┻━┻   -   TableFlipper': '(╯°□°）╯︵ ┻━┻   ————   掀桌',
+    '╯°□°）╯︵ ┻━┻   -   TableFlipper': '╯°□°）╯︵ ┻━┻   ————   掀桌',
     'Don\'t click the X at the top right, it\'s a game breaking bug!': '请不要点击右上角的X，这会导致游戏运行不正常的！',
     'Nerf This!': '来削我呀！',
     'To nerf, or not to nerf. That is the Question!': '削，还是不削。值得考虑！',
@@ -300,7 +300,7 @@ var cnExcludeWhole = [
     /^(\d+)?\.?(\d+)?e?[\d\,]*\s\([\d\,]*$/, //处理不该抓取的数字
     /^[\d\,]*\,$/, //处理不该抓取的数字
     /^x\s?\d+\.\d+e[\d\,]*$/, //处理不该抓取的数字
-    /^[\d\,\s]+→(.*)$/, //误抓取的内容
+    /^[\d\.\,\s]+→(.*)$/, //误抓取的内容
     /^奖励: (.+)$/, //误抓取的内容
     /^打开微信扫一扫$/, //误抓取的内容
     /^点击加群$/, //误抓取的内容
@@ -360,6 +360,9 @@ var cnRegReplace = new Map([
     [/^Boost (.+) Production based on Time spent this (.+)$/, '根据本次$2经过的时间，增加$1的产量'], //升级
     [/^Boost all (.+) Generators based on time spent this (.+)$/, '根据本次$2经过的时间，增加$1的所有发生器产量'], //升级
     [/^All (.+) Generators are stronger based on time spent this (.+)$/, '根据本次$2经过的时间，$1的所有发生器产量变得更高'], //升级
+    [/^Inactive →(.*)s$/, '未生效 →$1秒'], //自动器
+    [/^(.*)s →(.*)s$/, '$1秒 →$2秒'], //自动器
+    [/^"Volatility \(persistence\) allows you to make earlier Layers non-volatile. Non-volatile Layers(\s+)never reset and reward a percentage of the its prestige reward every second.$/, '不定性(持续性)可以使更早出现的层级变得不再不定。不再不定的层级永不重置，它们将每秒给予一部分转生奖励。'], //不定性
     [/^All Upgrade and Simple Boost Effects are raised to the Power of(.*)$/, '所有升级和简单加成的效果变为该数值为幂的指数:$1'], //挑战
     [/^All Generator and Upgrade Prices are raised to the Power of (.+). Power Effects are raised to the Power of(.*)$/, '所有能量发生器和升级的价格变为该数值为幂的指数: $1。能量效果变为该数值为幂的指数:$2'], //挑战
     [/^All Generator Multipliers are raised to the Power of(.*)$/, '所有发生器倍率变为该数值为幂的指数:$1'], //挑战
@@ -368,9 +371,6 @@ var cnRegReplace = new Map([
     [/^Reward: All Generator Multiplicators per 10 Levels are \+(.+) better$/, '奖励: 所有发生器倍率每10级增加$1'], //挑战
     [/^Reward: Prestige Reward of Layer (.+) is x(.+) higher$/, '奖励: 层级$1的转生奖励变为$2倍'], //挑战
     [/^Reward: All Alpha Generators are x(.+) stronger$/, '奖励: 阿尔法发生器的效果变为$1倍'], //挑战
-    [/^Inactive →(.*)s$/, '未生效 →$1秒'], //自动器
-    [/^(.*)s →(.*)s$/, '$1秒 →$2秒'], //自动器
-    [/^"Volatility (persistence) allows you to make earlier Layers non-volatile. Non-volatile Layers(\s+)never reset and reward a percentage of the its prestige reward every second.$/, '不定性(持续性)可以使更早出现的层级变得不再不定。不再不定的层级永不重置，它们将每秒给予一部分转生奖励。'], //不定性
     [/^In Omega Layers, your Goal is to produce Resources \(e.g. α\) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
     [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '了，它会每秒产生1α。继续购买发生器可以提升α产量。'], //教程
     [/^.(\s+)Browser Storage isn't the most reliable thing. You may share Export Codes in my Discord Server, if you want.$/, '。浏览器缓存不一定可靠。如果有需要，您也可以与他人分享存档。'], //教程
