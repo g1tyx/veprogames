@@ -152,8 +152,17 @@ var cnItems = {
     'The True Time': '真实时间',
     'More Gamma, more Boost': '伽马既涨，加成当附',
     'Huge Numbers': '巨额数字',
-    'How Challenging': '挑战就这',
+    'How Challenging': '挑战，就这？',
     'Persistence': '持续性',
+    'Other Times Await... Yet Again': '来生……还再会',
+    'Aleph-': '阿列夫-',
+    'It all runs by itself': '无人值守',
+    'How many are there?!': '还有多少层啊？！',
+    'It\'s time to stop! (not': '该停下来了吧！(并不',
+    'End Game?': '到游戏末期了吗？',
+    'Temperature': '温度',
+    'Stack A-New!': '叠出一片新天地！',
+    'H λ l f L i f e': '半 λ 条 λ 命',
 
     'Reach 10 α': '到达10α',
     'Buy your first α Upgrade': '首次购买升级',
@@ -170,6 +179,16 @@ var cnItems = {
     'Reach 1e100,000 α': '到达1e100000α',
     'Beat Challenge y-01 at least once': '至少完成一次y-01挑战',
     'Make Layer α Non-Volatile': '使层级α不再不定',
+    'Go δ': '到达δ',
+    'Reach 1,000 ℵ': '到达1000ℵ',
+    'Reach 1e30 ℵ': '到达1e30ℵ',
+    'Reach 1.8e308 ℵ': '到达1.8e308ℵ',
+    'Enable the Aleph Automator': '激活 自动阿列夫 自动器',
+    'Go ε': '到达ε',
+    'Go ζ': '到达ζ',
+    'Reach 1e1,000,000,000 α': '到达1e100000000α',
+    'Go θ': '到达θ',
+    'Go λ': '到达λ',
 
     //教程
     'Getting Started': '开始吧',
@@ -422,7 +441,7 @@ var cnRegReplace = new Map([
     [/^.(\s+)Browser Storage isn't the most reliable thing. You may share Export Codes in my Discord Server, if you want.$/, '。浏览器缓存不一定可靠。如果有需要，您也可以与他人分享存档。'], //教程
     [/^Generators produce Resources every second or other Generators. The first Generator produces Resources. The 2nd Generator produces(\s+)1st Generators, the 3rd Generator produces 2nd Generators and so on. You buy Generators with Resources$/, '发生器每秒产生资源或其他发生器。第1个发生器产生资源，第2个发生器产生第1个发生器，第3个发生器产生第2个发生器，依此类推。您需要使用资源来购买发生器'], //教程
     [/^Upgrades improve several Aspects of the Game. For example, they help produce more Resource by making Generators stronger or increasing(\s+)Prestige Rewards.$/, '升级可以影响游戏的方方面面。例如，它们可以使发生器效果变得更好，或者使转生奖励变得更多，从而增加资源产量。'], //教程
-    [/^Once you reach (.+) α, you can reset your current progress to get 1 β, which(\s+)can be spent on various things to make progress faster. You will gain your second β at about (.+) α$/, '当您拥有$1α时，您就可以重置目前的进度，然后获得1β了，您可以将它用在不同的地方来加快进度。您可以在$3α时获得第2个β'], //教程
+    [/^Once you reach (.+) α, you can reset your current progress to get 1 β, which(\s+)can be spent on various things to make progress faster. You will gain your second β at about (.+) α$/, '当您到达$1α时，您就可以重置目前的进度，然后获得1β了，您可以将它用在不同的地方来加快进度。您可以在$3α时获得第2个β'], //教程
     [/^With Automators, you can automate the Game to your liking. For example, they can Prestige and Maximize Layers(\s+)automatically. You can also set a desired interval, which you can use if you want to make them slower. For example, with a desired(\s+)interval of 3 seconds, the automator will never be faster than 3 seconds.$/, '只要拥有自动器，您就可以按照喜好来进行自动操作了。例如，可以利用它们来自动转生和最大化层级。您还可以设置一个生效时间间隔，这样可以让它们更晚生效。例如，如果将生效时间间隔设置为3秒，则自动器永远不会在时间间隔小于3秒的情况下生效。'], //教程
     [/^If you see a message below the amount of Resource you have, the Layer has a "Simple Boost". Simple Boost boosts the first Alpha Generator, resulting in much higher numbers. The Boost you get is based on the current Resource you(\s+)have.$/, '如果您在拥有的资源数量下方看到一条消息，则说明该层级拥有了 简单加成 。简单加成使第一个阿尔法发生器的效果变得更好，从而使数字变得更大。简单加成的数值与您当前拥有的资源数量有关。'], //教程
     [/^Challenges are a way to increase your production. While active, they pose a penalty to your production, and you have(\s+)to reach a certain goal. When the Goal is reached, you get a reward form completing the Challenge.$/, '通过挑战可以增加产量。当进行挑战时，会对产量造成一定的负面效果，您必须达到特定的目标后才能完成挑战。完成挑战后，您可以获得一定的奖励。'], //教程
