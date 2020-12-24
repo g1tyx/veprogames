@@ -5,7 +5,7 @@ Vue.component("settings-menu", {
             settings: game.settings,
             exportString: "导出的游戏存档会出现在这里。请妥善保管。" +
                 " 在此处输入存档代码后，点击导入以导入游戏存档。(译者注：导入前请把这段话删了，否则会导入失败！)",
-            themes: [["Dark", "dark.css"], ["Light", "light.css"], ["Neon", "neon.css"], ["Godot Blue", "darkblue.css"]]
+            themes: [["黑暗", "dark.css"], ["明亮", "light.css"], ["霓虹", "neon.css"], ["暗蓝", "darkblue.css"]]
         }
     },
     mounted: function()
@@ -61,7 +61,7 @@ Vue.component("settings-menu", {
                 {
                     navigator.clipboard.writeText(this.exportString).then(function()
                     {
-                        functions.createNotification(new Notification(NOTIFICATION_SUCCESS, "Copied to Clipboard", "images/save.svg"));
+                        functions.createNotification(new Notification(NOTIFICATION_SUCCESS, "已复制到剪贴板", "images/save.svg"));
                     })
                 }
             });
@@ -77,15 +77,15 @@ Vue.component("settings-menu", {
             {
                 if(!ret)
                 {
-                    functions.createNotification(new Notification(NOTIFICATION_ERROR, "Error importing Game", "images/save.svg"));
+                    functions.createNotification(new Notification(NOTIFICATION_ERROR, "导入存档时发生错误", "images/save.svg"));
                 }
                 else if(ret === -1)
                 {
-                    functions.createNotification(new Notification(NOTIFICATION_ERROR, "What have you done..."));
+                    functions.createNotification(new Notification(NOTIFICATION_ERROR, "您在做什么……"));
                 }
                 else
                 {
-                    functions.createNotification(new Notification(NOTIFICATION_SUCCESS, "Game Imported", "images/save.svg"));
+                    functions.createNotification(new Notification(NOTIFICATION_SUCCESS, "游戏存档已导入", "images/save.svg"));
                 }
             }
             game.settings.tab = "Layers";
@@ -97,67 +97,67 @@ Vue.component("settings-menu", {
     template: `<div class="settings">
 <div class="settings-panel-container">
     <div class="settings-panel">
-        <label>Show all Layers <input type="checkbox" v-model="settings.showAllLayers"/></label>
-        <label>Show Layer Ordinals (&alpha;: #1, &beta;: #2, ...) <input type="checkbox" v-model="settings.showLayerOrdinals"/></label>
+        <label>显示所有层级 <input type="checkbox" v-model="settings.showAllLayers"/></label>
+        <label>显示层级序号 (&alpha;: #1, &beta;: #2, 依此类推) <input type="checkbox" v-model="settings.showLayerOrdinals"/></label>
     </div>
     <div class="settings-panel">
-        <label>Show first <input :disabled="settings.showAllLayers" type="number" min="1" max="5" v-model.number="settings.showMinLayers"/> Layers</label>
-        <label>Show last <input :disabled="settings.showAllLayers" type="number" min="1" max="5" v-model.number="settings.showMaxLayers"/> Layers</label>
+        <label>只显示最前面的 <input :disabled="settings.showAllLayers" type="number" min="1" max="5" v-model.number="settings.showMinLayers"/> 个层级</label>
+        <label>只显示最后面的 <input :disabled="settings.showAllLayers" type="number" min="1" max="5" v-model.number="settings.showMaxLayers"/> 个层级</label>
     </div>
     <div class="settings-panel">
-        <label>Buy Max always buys until 10 <input type="checkbox" v-model="settings.buyMaxAlways10"/></label>
-        <label>Disable Buy Max on highest unlocked Layer <input type="checkbox" v-model="settings.disableBuyMaxOnHighestLayer"/></label>
-        <label v-if="volatilityUnlocked()">Auto Max All <input type="checkbox" v-model="settings.autoMaxAll"/></label>
-        <label>Auto Prestige Highest Layer <input type="checkbox" v-model="settings.autoPrestigeHighestLayer"/></label>
+        <label>最大化所有时总是一次性购买10个 <input type="checkbox" v-model="settings.buyMaxAlways10"/></label>
+        <label>对最高的层级不使用最大化所有 <input type="checkbox" v-model="settings.disableBuyMaxOnHighestLayer"/></label>
+        <label v-if="volatilityUnlocked()">自动最大化所有 <input type="checkbox" v-model="settings.autoMaxAll"/></label>
+        <label>自动转生最高的层级 <input type="checkbox" v-model="settings.autoPrestigeHighestLayer"/></label>
     </div>
     <div class="settings-panel">
-        <label>Allow Resource Colors <input type="checkbox" v-model="settings.resourceColors"/></label>
-        <label>Allow Resource Glow <input type="checkbox" v-model="settings.resourceGlow"/></label>
-        <label>News Ticker <input type="checkbox" v-model="settings.newsTicker"/></label>
-        <label>Notifications <input type="checkbox" v-model="settings.notifications"/></label>
-        <label>Save Notifications <input type="checkbox" v-model="settings.saveNotifications"/></label>
-        <label>Confirmations <input type="checkbox" v-model="settings.confirmations"/></label>
+        <label>启用资源颜色 <input type="checkbox" v-model="settings.resourceColors"/></label>
+        <label>启用资源光亮 <input type="checkbox" v-model="settings.resourceGlow"/></label>
+        <label>启用滚动新闻 <input type="checkbox" v-model="settings.newsTicker"/></label>
+        <label>启用提示框 <input type="checkbox" v-model="settings.notifications"/></label>
+        <label>启用存档提示框 <input type="checkbox" v-model="settings.saveNotifications"/></label>
+        <label>启用确认弹出窗口 <input type="checkbox" v-model="settings.confirmations"/></label>
     </div>
     <div class="settings-panel">
-        <span>Title Style</span><br/>
+        <span>标题显示内容</span><br/>
         <fieldset>
-            <label><input type="radio" value="0" v-model.number="settings.titleStyle"/> None</label><br/>
-            <label><input type="radio" value="1" v-model.number="settings.titleStyle"/> Motd</label><br/>
-            <label><input type="radio" value="2" v-model.number="settings.titleStyle"/> Current Layer</label>
+            <label><input type="radio" value="0" v-model.number="settings.titleStyle"/> 无</label><br/>
+            <label><input type="radio" value="1" v-model.number="settings.titleStyle"/> 每日箴言</label><br/>
+            <label><input type="radio" value="2" v-model.number="settings.titleStyle"/> 当前层级</label>
         </fieldset>
     </div>
     <div class="settings-panel">
-        <label>Offline Progress <input type="checkbox" v-model="settings.offlineProgress"/><br/>(increases loading time)</label>
+        <label>启用离线进度 <input type="checkbox" v-model="settings.offlineProgress"/><br/>(可能需要更多时间载入游戏)</label>
     </div>
 </div>
 <div class="settings-row">
-    <label>Theme <button :class="{selected: settings.theme === t[1]}" v-for="t in themes" @click="setTheme(t[1])">{{t[0]}}</button></label>
+    <label>游戏主题 <button :class="{selected: settings.theme === t[1]}" v-for="t in themes" @click="setTheme(t[1])">{{t[0]}}</button></label>
 </div>
 <div class="settings-row">
-    <button @click="save()">Save Game</button>
-    <button @click="exportGame()">Export</button>
-    <button @click="importGame()">Import</button>
-    <button @click="hardResetGame()">Wipe Game</button>
+    <button @click="save()">保存游戏</button>
+    <button @click="exportGame()">导出存档</button>
+    <button @click="importGame()">导入存档</button>
+    <button @click="hardResetGame()">抹除游戏进度</button>
 </div>
 <div class="settings-row">
     <textarea ref="exportBox" class="export" v-model="exportString"></textarea>
 </div>
 <div class="settings-row">
-    <button @click="copy()">Copy to Clipboard</button>
-    <button @click="paste()">Paste from Clipboard</button>
-    <button @click="clear()">Clear</button>
-    <button @click="download()">Download as .txt</button>
+    <button @click="copy()">复制到剪贴板</button>
+    <button @click="paste()">从剪贴板粘贴</button>
+    <button @click="clear()">清空</button>
+    <button @click="download()">下载为文本文档</button>
 </div>
 <div class="settings-row">
-    <p>Controls: M to Max All on the selected Layer<br/>
-    Left and Right Arrows to change Layers<br/>
-    P to Prestige the selected Layer<br/>
-    First Letter of a tab ([L]ayers, [V]olatility) to select it; C to select Achievements</p>
+    <p>快捷键：按M可在当前层级最大化所有<br/>
+    按左右方向键可以切换层级<br/>
+    按P可以在当前层级进行转生<br/>
+    按选项卡的英文首字母可以选择它(如按L选择层级，按V选择不定性)，按C可以选择成就</p>
 </div>
 <div class="credits">
-    <h4>Credits</h4>
-    <p>Inspiration: Antimatter Dimensions by hevipelle, Infinite Layers by dan-simon</p>
-    <p>Powered by vue.js and break eternity.js</p>
+    <h4>致谢名单(中文版由by22dgb汉化)</h4>
+    <p>感来源：hevipelle制作的反物质维度，dan-simon制作的无限层级</p>
+    <p>由vue.js和break eternity.js提供的技术支持</p>
 </div>
 </div>`
 })

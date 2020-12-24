@@ -7,7 +7,7 @@ var functions = {
         }
         if(n.mag === Infinity)
         {
-            return "Infinite";
+            return "无限";
         }
         if(n.lt(0))
         {
@@ -167,14 +167,14 @@ var functions = {
             localStorage.setItem("OmegaLayers_Settings", this.getSettingsSaveString());
             if(game.settings.notifications && game.settings.saveNotifications)
             {
-                functions.createNotification(new Notification(NOTIFICATION_STANDARD, "Game Saved!", "images/save.svg"));
+                functions.createNotification(new Notification(NOTIFICATION_STANDARD, "游戏已保存！", "images/save.svg"));
             }
         }
         catch(e)
         {
             if(game.settings.notifications && game.settings.saveNotifications)
             {
-                functions.createNotification(new Notification(NOTIFICATION_ERROR, "Error Saving Game", "images/save.svg"));
+                functions.createNotification(new Notification(NOTIFICATION_ERROR, "保存时发生错误", "images/save.svg"));
             }
         }
     },
@@ -204,7 +204,7 @@ var functions = {
         }
         catch(e)
         {
-            console.warn("Error loading save\n", e.stack);
+            console.warn("读取存档时发生错误\n", e.stack);
             return false;
         }
 
@@ -287,7 +287,7 @@ var functions = {
             }
             catch(e)
             {
-                console.warn("Error loading Settings\n", e.stack);
+                console.warn("读取设置时发生错误\n", e.stack);
             }
         }
         this.setTheme(game.settings.theme);
@@ -311,7 +311,7 @@ var functions = {
             let t = (Date.now() - loadObj.timeSaved) / 1000;
             if(t >= 60) //after offline for over 60 seconds
             {
-                document.querySelector("#loading > p").innerHTML = "Applying Offline Progress...";
+                document.querySelector("#loading > p").innerHTML = "计算离线进度并应用……";
                 simulateGameTime(t);
                 functions.createNotification(new Notification(NOTIFICATION_STANDARD, "您总共离线了 " + functions.formatTime(t)));
             }

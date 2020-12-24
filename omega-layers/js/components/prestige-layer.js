@@ -101,13 +101,13 @@ Vue.component("prestige-layer", {
     </span>
 </button>
 <div class="tabs">
-    <button v-if="layer.hasGenerators()" @click="setTab(TAB_GENERATORS)">Generators</button>
-    <button v-if="layer.hasUpgrades()" @click="setTab(TAB_UPGRADES)">Upgrades</button>
-    <button v-if="layer.hasPower()" @click="setTab(TAB_POWER)">Power</button>
-    <button v-if="layer.hasChallenges()" @click="setTab(TAB_CHALLENGES)">Challenges</button>
-    <button v-if="layer.hasTreeUpgrades()" @click="setTab(TAB_UPGRADE_TREE)">Upgrade Tree</button>
-    <button @click="setTab(TAB_STATISTICS)">Statistics</button>
-    <button @click="layer.maxAll()" :disabled="disableBuyMax">Max All (M)</button>
+    <button v-if="layer.hasGenerators()" @click="setTab(TAB_GENERATORS)">发生器</button>
+    <button v-if="layer.hasUpgrades()" @click="setTab(TAB_UPGRADES)">升级</button>
+    <button v-if="layer.hasPower()" @click="setTab(TAB_POWER)">能量</button>
+    <button v-if="layer.hasChallenges()" @click="setTab(TAB_CHALLENGES)">挑战</button>
+    <button v-if="layer.hasTreeUpgrades()" @click="setTab(TAB_UPGRADE_TREE)">升级树</button>
+    <button @click="setTab(TAB_STATISTICS)">统计</button>
+    <button @click="layer.maxAll()" :disabled="disableBuyMax">最大化所有(M)</button>
 </div>
 <div v-if="layer.hasGenerators() && tab === TAB_GENERATORS">
     <generator-table :generators="layer.generators"></generator-table>
@@ -117,7 +117,7 @@ Vue.component("prestige-layer", {
 </div>
 <div v-if="layer.hasPower() && tab === TAB_POWER">
     <p class="power-text">您拥有 <span class="big-number">{{formatNumber(layer.power, 2, 2)}}</span> <resource-name :layerid="layer.layer"></resource-name>-能量， 
-    因此使以下产量变为 <span class="big-number">x{{formatNumber(layer.getPowerBoost(), 2, 2)}}</span> 倍: <layer-colored-text :layerid="layer.powerTargetLayer.layer" v-html="powerName"></layer-colored-text>-发生器</p>
+    因此使<layer-colored-text :layerid="layer.powerTargetLayer.layer" v-html="powerName"></layer-colored-text>-发生器产量变为 <span class="big-number">x{{formatNumber(layer.getPowerBoost(), 2, 2)}}</span> 倍</p>
     <generator-table :generators="layer.powerGenerators"></generator-table>
 </div>
 <div v-if="layer.hasChallenges() && tab === TAB_CHALLENGES">
@@ -126,7 +126,7 @@ Vue.component("prestige-layer", {
 </div>
 <div v-if="layer.hasTreeUpgrades() && tab === TAB_UPGRADE_TREE">
     <div class="respec" v-if="!layer.isNonVolatile()">
-        <button @click="layer.respecUpgradeTree()">Respec to reset all the Upgrades, but you don't get the spent <resource-name :layerid="layer.layer"></resource-name> back!</button>
+        <button @click="layer.respecUpgradeTree()">洗点可以重置所有升级，但您不会获得 <resource-name :layerid="layer.layer"></resource-name> 返还！</button>
     </div>
     <upgrade-tree :upgrades="layer.treeUpgrades"></upgrade-tree>
 </div>

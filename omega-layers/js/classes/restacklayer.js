@@ -6,50 +6,50 @@ class ReStackLayer
         this.timeSpent = 0;
         this.timesReset = 0;
         this.permUpgrades = {
-            prestigeGains: new RestackLayerUpgrade("All Prestige gains are higher",
+            prestigeGains: new RestackLayerUpgrade("增加所有转生资源的获取数量",
                 level => this.getPermUpgradeCost(),
                 level => Decimal.pow(128, level), {
                     maxLevel: 1
                 }),
-            layerExponentialBoostFactorTime: new RestackLayerUpgrade("The Layer Exponential Factor increases over time",
+            layerExponentialBoostFactorTime: new RestackLayerUpgrade("层级指数因子随着时间而增加",
                 level => this.getPermUpgradeCost(),
                 level => Math.min(1, this.timeSpent / 28800) * 3 * level.toNumber(), {
                     maxLevel: 1,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(4, "+")
                 }),
-            upgradeEffects: new RestackLayerUpgrade("All Upgrade Effects are stronger (including Tree Upgrades)",
+            upgradeEffects: new RestackLayerUpgrade("所有的升级效果变得更好(包括树的升级)",
                 level => this.getPermUpgradeCost(),
                 level => new Decimal(1).add(level.mul(2)), {
                     maxLevel: 1,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                 }),
-            powerGenerators: new RestackLayerUpgrade("All Power Generators are stronger",
+            powerGenerators: new RestackLayerUpgrade("所有能量发生器的效果变得更好",
                 level => this.getPermUpgradeCost(),
                 level => new Decimal(1).add(level.mul(0.15)), {
                     maxLevel: 1,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                 }),
-            aleph: new RestackLayerUpgrade("\"Increase your Aleph gain\" Upgrade scales better",
+            aleph: new RestackLayerUpgrade("\"增加阿列夫获取数量\"的升级效果变得更好",
                 level => this.getPermUpgradeCost(),
                 level => 0.005 * level.toNumber(), {
                     maxLevel: 1,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(3, "+")
                 }),
-            layerExponentialBoostFactor: new RestackLayerUpgrade("The Layer Exponential Factor is higher",
+            layerExponentialBoostFactor: new RestackLayerUpgrade("增加层级指数因子",
                 level => this.getPermUpgradeCost(),
                 level => level.toNumber(), {
                     maxLevel: 1,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(0, "+")
                 })
         };
-        this.metaUpgrade = new RestackLayerUpgrade("All your Layer Resources are multiplied each second",
+        this.metaUpgrade = new RestackLayerUpgrade("所有层级的资源乘以秒数",
             level => new Decimal(1e10),
             level => 1 + 0.2 * level.toNumber(),{
                 maxLevel: 1
             });
         this.upgradeTree = [
             [
-                new RestackLayerUpgrade("Increase the Resource Multiplier",
+                new RestackLayerUpgrade("增加资源倍率",
                     level => new Decimal(1e24),
                     level => Decimal.pow(2, level),{
                         maxLevel: 1,
@@ -57,13 +57,13 @@ class ReStackLayer
                     })
             ],
             [
-                new RestackLayerUpgrade("Resource Multipliers are stronger",
+                new RestackLayerUpgrade("资源倍率效果变得更好",
                     level => new Decimal(1e50),
                     level => Decimal.pow(4, level),{
                         maxLevel: 1,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     }),
-                new RestackLayerUpgrade("Resource Multiplier Upgrades are stronger based on time spent this ReStack",
+                new RestackLayerUpgrade("根据本次重新堆叠经过的时间，使资源倍率升级的效果变得更好",
                 level => new Decimal(1e50),
                 level => new Decimal(1).add(Decimal.pow(2, level).sub(1).mul(this.timeSpent / 1000)),{
                         maxLevel: 1,
@@ -71,24 +71,24 @@ class ReStackLayer
                     })
             ],
             [
-                new RestackLayerUpgrade("Unlock Resource Powerers",
+                new RestackLayerUpgrade("解锁资源强化",
                     level => new Decimal(1e150),
                     level => level.gt(0), {
                         maxLevel: 1,
                         getEffectDisplay: function()
                         {
-                            return this.level.gt(0) ? "Unlocked" : "Locked";
+                            return this.level.gt(0) ? "已解锁" : "未解锁";
                         }
                     })
             ],
             [
-                new RestackLayerUpgrade("Resource Powerers are stronger",
+                new RestackLayerUpgrade("资源强化效果变得更好",
                     level => new Decimal("1e2000"),
                     level => new Decimal(1).add(level.mul(0.1)), {
                         maxLevel: 1,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     }),
-                new RestackLayerUpgrade("Resource Multipliers are stronger",
+                new RestackLayerUpgrade("资源倍率效果变得更好",
                     level => new Decimal("1e1500"),
                     level => new Decimal(1).add(level.mul(3)), {
                         maxLevel: 1,
@@ -96,23 +96,23 @@ class ReStackLayer
                     })
             ],
             [
-                new RestackLayerUpgrade("Your Layer gets substracted instead of reset when buying Upgrades",
+                new RestackLayerUpgrade("购买升级时，您的层级会减去相应数值，而不是进行重置",
                     level => new Decimal("1e10000"),
                     level => level.gt(0), {
                         maxLevel: 1,
                         getEffectDisplay: function()
                         {
-                            return this.level.gt(0) ? "Unlocked" : "Locked";
+                            return this.level.gt(0) ? "已解锁" : "未解锁";
                         }
                     })
             ],
             [
-                new RestackLayerUpgrade("Resource Powerers are stronger",
+                new RestackLayerUpgrade("资源强化效果变得更好",
                     level => new Decimal("1ee10"),
                     level => new Decimal(1).add(level), {
                         maxLevel: 1
                     }),
-                new RestackLayerUpgrade("Resource Multipliers scale better to their level",
+                new RestackLayerUpgrade("资源倍率根据其等级，效果变得更好",
                     level => new Decimal("1ee10"),
                     level => new Decimal(1).add(level.mul(0.15)), {
                         maxLevel: 1,
@@ -236,7 +236,7 @@ class ReStackLayer
     {
         this.restack(false);
         game.metaLayer.active = true;
-        functions.createNotification(new Notification(NOTIFICATION_SPECIAL, "Other Times await..."));
+        functions.createNotification(new Notification(NOTIFICATION_SPECIAL, "来生再会……"));
     }
 
     tick(dt)

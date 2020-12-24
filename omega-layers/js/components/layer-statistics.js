@@ -12,8 +12,8 @@ Vue.component("layer-statistics", {
 <p>您拥有 {{formatNumber(layer.resource, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></p>
 <p>您总共拥有 {{formatNumber(layer.totalResource, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></p>
 <p>您最高拥有过 {{formatNumber(layer.maxResource, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></p>
-<p>您经过了 {{formatTime(layer.timeSpent)}} 于此 <resource-name :layerid="layer.layer"></resource-name></p>
-<p v-if="layer.layer > 0">您已经进行过 <resource-name :layerid="layer.layer"></resource-name> 转生 {{formatTimesReset(layer.timesReset)}} 次</p>
+<p>您在此 <resource-name :layerid="layer.layer"></resource-name> 中经过了 {{formatTime(layer.timeSpent)}}</p>
+<p v-if="layer.layer > 0">您已经进行过 {{formatTimesReset(layer.timesReset)}} 次 <resource-name :layerid="layer.layer"></resource-name> 转生</p>
 <p v-if="layer.layer > 0 && layer.hasPower()">您拥有 {{formatNumber(layer.power, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name>-能量</p>
 </div>`
 });

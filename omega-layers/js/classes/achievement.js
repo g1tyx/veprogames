@@ -16,7 +16,7 @@ class Achievement
             this.isCompleted = this.checkCompleted();
             if(this.isCompleted && game.settings.notifications)
             {
-                functions.createNotification(new Notification(NOTIFICATION_SUCCESS, "Achievement Get: " + this.title, "images/star.svg"));
+                functions.createNotification(new Notification(NOTIFICATION_SUCCESS, "获得成就: " + this.title, "images/star.svg"));
             }
         }
     }

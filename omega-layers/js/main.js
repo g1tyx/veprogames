@@ -20,10 +20,10 @@ function onCreate()
 {
     let loadingText =  document.querySelector("#loading > p");
 
-    loadingText.innerHTML = "Initializing...";
+    loadingText.innerHTML = "初始化中……";
     functions.generateLayer(0);
     functions.setCurrentLayer(game.layers[0]);
-    loadingText.innerHTML = "Loading Savegame...";
+    loadingText.innerHTML = "读取已保存的游戏存档……";
     functions.loadGame();
 
     document.getElementById("loading").style.opacity = "0";

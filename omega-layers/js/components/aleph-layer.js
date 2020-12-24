@@ -33,13 +33,13 @@ Vue.component("aleph-layer", {
     </div>
 </div>
 <div class="tabs">
-    <button @click="aleph.maxAll()">Max All (M)</button>
+    <button @click="aleph.maxAll()">最大化所有(M)</button>
 </div>
 <div class="upgrades">
     <aleph-upgrade :upgrade="aleph.upgrades.alephGain"></aleph-upgrade>
     <aleph-upgrade :upgrade="aleph.upgrades.alephGainBonus"></aleph-upgrade>
 </div>
-<h3>Enhancers</h3>
+<h3>增强升级</h3>
 <div class="upgrades">
     <aleph-upgrade :upgrade="aleph.upgrades.deltaBoost"></aleph-upgrade>
     <aleph-upgrade :upgrade="aleph.upgrades.alephBoost"></aleph-upgrade>
