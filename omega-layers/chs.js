@@ -470,7 +470,7 @@ var cnRegReplace = new Map([
     [/^Reward: Prestige Reward of Layer (.+) is x(.+) higher$/, '奖励: 层级$1的转生奖励变为$2倍'], //挑战
     [/^Reward: All Alpha Generators are x(.+) stronger$/, '奖励: 阿尔法发生器的效果变为$1倍'], //挑战
     [/^In Omega Layers, your Goal is to produce Resources \(e.g. α\) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
-    [/^(\s*)To start, click the  \\"+1 α\\" button until you have 10 α. With 10 α, you can buy a Generator α$/, '首先，先点击 +1α 按钮，直到您一共获得了10α。这样您就可以购买发生器α'], //教程
+    [/^(\s*)To start, click the(\s+)"+1 α" button until you have 10 α. With 10 α, you can buy a Generator α$/, '首先，先点击 +1α 按钮，直到您一共获得了10α。这样您就可以购买发生器α'], //教程
     [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '了，它会每秒产生1α。继续购买发生器可以提升α产量。'], //教程
     [/^.(\s+)Browser Storage isn't the most reliable thing. You may share Export Codes in my Discord Server, if you want.$/, '。浏览器缓存不一定可靠。如果有需要，您也可以与他人分享存档。'], //教程
     [/^Generators produce Resources every second or other Generators. The first Generator produces Resources. The 2nd Generator produces(\s+)1st Generators, the 3rd Generator produces 2nd Generators and so on. You buy Generators with Resources$/, '发生器每秒产生资源或其他发生器。第1个发生器产生资源，第2个发生器产生第1个发生器，第3个发生器产生第2个发生器，依此类推。您需要使用资源来购买发生器'], //教程
