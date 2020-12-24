@@ -492,6 +492,7 @@ var cnRegReplace = new Map([
     [/^Boost on (.+) Production$/, '$1的产量'], //升级
     [/^Boost (.+) Production$/, '增加$1的产量'], //升级
     [/^Boost Production of Generators (.+)$/, '以下发生器产量增加: $1'], //升级
+    [/^Boost Production of Power Generators (.+)$/, '以下能量发生器产量增加: $1'], //升级
     [/^Boost Prestige Reward on Layer (.+)$/, '增加层级$1的转生奖励'], //升级
     [/^Boost (.+) Production based on Time spent this (.+)$/, '根据本次$2经过的时间，增加$1的产量'], //升级
     [/^Boost all (.+) Generators based on time spent this (.+)$/, '根据本次$2经过的时间，增加$1的所有发生器产量'], //升级
