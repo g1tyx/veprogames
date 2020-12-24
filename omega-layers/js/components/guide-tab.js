@@ -13,7 +13,7 @@ Vue.component("guide-tab", {
     template: `<div class="guide-tab">
     <guide-item>
         <template v-slot:title>开始吧</template>
-        <template v-slot:text>在欧米茄层级中，您的目标是获取资源 (例如 &alpha;)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。<br/>
+        <template v-slot:text>在欧米伽层级中，您的目标是获取资源 (例如 &alpha;)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。<br/>
         首先，先点击 "+1 &alpha;" 按钮，直到您一共获得了 10 &alpha;。这样您就可以购买发生器 &alpha;<sub>1</sub>了，它会每秒产生 1 &alpha;。继续购买发生器可以提升 &alpha; 产量。</template>
     </guide-item>
     <guide-item>
