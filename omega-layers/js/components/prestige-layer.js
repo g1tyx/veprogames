@@ -91,13 +91,13 @@ Vue.component("prestige-layer", {
         },
     template: `<div class="prestige-layer">
 <resource-display :layer="layer"></resource-display>
-<p v-if="layer.hasSimpleBoost()" class="power-text">This translates to a <span class="big-number">x{{formatNumber(layer.getSimpleBoost(), 2, 2)}}</span> Boost on &alpha; Production</p>
+<p v-if="layer.hasSimpleBoost()" class="power-text">因此 &alpha; 产量变为 <span class="big-number">x{{formatNumber(layer.getSimpleBoost(), 2, 2)}}</span> 倍</p>
 <div class="resource-button" v-if="layer.hasResourceButton"><button @click="layer.addResource(layer.getResourceButtonAmount())">+{{formatNumber(layer.getResourceButtonAmount(), 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></button></div>
 <button v-if="nextLayer && (layer.canGenerateNextLayer() || nextLayer.timesReset > 0)" :disabled="!layer.canPrestige()" class="prestige" @click="layer.prestige()">
     <span v-if="layer.isNonVolatile()">+{{formatNumber(layer.getPrestigeAmountPerSecond(), 2, 2)}} <resource-name :layerid="nextLayer.layer"></resource-name>/s</span>
     <span v-else>
-        <span v-if="layer.canPrestige()">Prestige to go <resource-name :layerid="nextLayer.layer"></resource-name><br/>Get +{{formatNumber(layer.getPrestigeAmount(), 2, 0)}} <resource-name :layerid="nextLayer.layer"></resource-name></span>
-        <span v-else>Reach {{formatNumber(layer.getPrestigeLimit(), 2, 0)}} <resource-name :layerid="layer.layer"></resource-name></span>
+        <span v-if="layer.canPrestige()">转生以到达 <resource-name :layerid="nextLayer.layer"></resource-name><br/>可获得 {{formatNumber(layer.getPrestigeAmount(), 2, 0)}} <resource-name :layerid="nextLayer.layer"></resource-name></span>
+        <span v-else>需要到达 {{formatNumber(layer.getPrestigeLimit(), 2, 0)}} <resource-name :layerid="layer.layer"></resource-name></span>
     </span>
 </button>
 <div class="tabs">
@@ -116,8 +116,8 @@ Vue.component("prestige-layer", {
     <upgrade-container :upgrades="layer.upgrades"></upgrade-container>
 </div>
 <div v-if="layer.hasPower() && tab === TAB_POWER">
-    <p class="power-text">You have <span class="big-number">{{formatNumber(layer.power, 2, 2)}}</span> <resource-name :layerid="layer.layer"></resource-name>-Power, 
-    translated to a <span class="big-number">x{{formatNumber(layer.getPowerBoost(), 2, 2)}}</span> Boost on <layer-colored-text :layerid="layer.powerTargetLayer.layer" v-html="powerName"></layer-colored-text>-Generators</p>
+    <p class="power-text">您拥有 <span class="big-number">{{formatNumber(layer.power, 2, 2)}}</span> <resource-name :layerid="layer.layer"></resource-name>-能量， 
+    因此使以下产量变为 <span class="big-number">x{{formatNumber(layer.getPowerBoost(), 2, 2)}}</span> 倍: <layer-colored-text :layerid="layer.powerTargetLayer.layer" v-html="powerName"></layer-colored-text>-发生器</p>
     <generator-table :generators="layer.powerGenerators"></generator-table>
 </div>
 <div v-if="layer.hasChallenges() && tab === TAB_CHALLENGES">

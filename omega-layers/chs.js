@@ -30,11 +30,8 @@ var cnItems = {
     'Max All (M': '最大化所有(M',
     'Discord': 'Discord地址',
     'Website': '官方网站地址',
-    'This translates to a': '因此增加了',
-    'Boost on': '加成，作用于',
     'Respec to reset all the Upgrades, but you don\'t get the spent': '洗点可以重置所有升级，但您不会获得',
     'back!': '返还！',
-    'Prestige to go': '转生以到达',
     'Generators': '发生器',
     'Upgrades': '升级',
     'Power': '能量',
@@ -48,19 +45,10 @@ var cnItems = {
     'Desired Interval': '生效时间间隔',
     'Seconds': '秒',
     'Active': '是否生效',
-    'Your highest Layer is': '您最高到达的层级是',
     'Production': '产量',
-    'You need to go': '您需要到达过',
-    'at least once to produce': '才可以产生',
     'Respec: get your spent': '洗点: 返还所有花费的',
     'back, and do a ReStack without reward': '，但进行一次无奖励的重新堆叠',
     'Enhancers': '增强升级',
-    'Resource Multipliers': '资源倍率',
-    'Resource Powerers': '资源强化',
-
-    //升级
-    'Max': '最大',
-    'It boosts stuff. Sadly I have no idea what exactly it boosts :(': '它可以使其他的东西变得更强。但很遗憾您还不知道它能使什么变得更强 :(',
 
     //自动器
     'Automatically buys max on all Layers': '在所有层级上自动最大化所有',
@@ -73,6 +61,7 @@ var cnItems = {
     //不定性
     'Make the next Layer non-volatile': '使下一层不再不定',
     'None → α': '无 → α',
+    'Boost the Prestige Reward you get per second': '增加每秒获得的转生奖励',
     'The next Layer is maxed automatically each tick': '使下一层每个时刻自动最大化',
 
     //阿列夫升级
@@ -88,8 +77,6 @@ var cnItems = {
     'Increase the exponential difference of boosts between layers, resulting in a large boost!': '使层级指数因子变得更高，从而增加加成总量！',
 
     //挑战
-    'That\'s weird. Something\'s different...': '奇怪，有什么东西不一样了……',
-    'A Cake.': '蛋糕。',
     'You are currently in Challenge': '您目前进行的是挑战',
     'Leave Challenge': '退出挑战',
     'Completed!': '已完成！',
@@ -376,25 +363,6 @@ var cnPrefix = {
     "   ": "",
     "  ": "",
     " ": "",
-    "You were offline for": "您总共离线了", //主界面及层级等
-    "You have made a total of": "您总共拥有", //主界面及层级等
-    "You have gone": "您已经进行过", //主界面及层级等
-    "You have unlocked ": "您解锁了", //主界面及层级等
-    "You have approx.": "您大概拥有", //主界面及层级等
-    "You have": "您拥有", //主界面及层级等
-    "Get +": "可获得", //主界面及层级等
-    "The highest you ever had is": "您最高拥有过", //主界面及层级等
-    "You are on Layer": "您在层级", //主界面及层级等
-    "You get": "您可获得", //主界面及层级等
-    ", translated to a x": "，因此获得了对以下生效的", //主界面及层级等
-    "Boost on ": "", //升级
-    "Boost Production of Generators ": "以下发生器产量增加: ", //升级
-    "Boost Production of Power Generators ": "以下能量发生器产量增加: ", //升级
-    "Boost Prestige Reward on Layer ": "以下层级转生奖励增加: ", //升级
-    "and ": "与", //升级
-    "All Upgrade and Simple Boost Effects are raised to the Power of": "所有升级和简单加成的效果变为该数值为幂的指数:", //挑战
-    "All Generator Multipliers are raised to the Power of": "所有发生器倍率变为该数值为幂的指数:", //挑战
-    "All Prestige Rewards are raised to the Power of": "所有转生奖励变为该数值为幂的指数:", //挑战
     "Have 1 ": "拥有1个", //成就
     "Have over 1,000 ": "拥有超过1000个", //成就
     "Reach Layer 1000": "到达层级1000", //成就
@@ -434,9 +402,6 @@ var cnPostfix = {
     "  ": "",
     " ": "",
     "\n": "",
-    " Boost on": "倍产量加成: ", //主界面及层级等
-    " Production": "的产量", //升级
-    " Achievements.": "个成就。", //升级
 }
 
 //需排除的，正则匹配
@@ -461,10 +426,10 @@ var cnExcludeWhole = [
     /^旧版$/, //误抓取的内容
     /^论坛$/, //误抓取的内容
     /^您拥有$/, //误抓取的内容
-    /^所有能量发生器和升级的价格变为该数值为幂的指数(.*)$/, //误抓取的内容
-    /^所有升级和简单加成的效果变为该数值为幂的指数(.*)$/, //误抓取的内容
-    /^所有发生器倍率变为该数值为幂的指数(.*)$/, //误抓取的内容
-    /^所有转生奖励变为该数值为幂的指数(.*)$/, //误抓取的内容
+    /^所有能量发生器和升级的价格变为原数值\^(.*)$/, //误抓取的内容
+    /^所有升级和简单加成的效果变为原数值\^(.*)$/, //误抓取的内容
+    /^所有发生器倍率变为原数值\^(.*)$/, //误抓取的内容
+    /^所有转生奖励变为原数值\^(.*)$/, //误抓取的内容
     /^可获得$/, //误抓取的内容
     /^以下发生器产量增加(.*)$/, //误抓取的内容
     /^以下能量发生器产量增加(.*)$/, //误抓取的内容
@@ -493,25 +458,7 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
-    [/^Power,(\s+)translated to a$/, '能量，因此增加了'], //主界面及层级等
-    [/^You spent (.+) this(.*)$/, '您经过了$1于此$2'], //主界面及层级等
-    [/^(?!Go)(.+) Times$/, '转生$1次'], //主界面及层级等
-    [/^Your Resource multiplies by x(.+) each second$/, '您的资源倍率每秒变为$1倍'], //主界面及层级等
-    [/^and thus advancing (.+) Layers per second$/, '因此每秒前进$1个层级'], //主界面及层级等
-    [/^Boost (.+) Production based on Time spent this (.+)$/, '根据本次$2经过的时间，增加$1的产量'], //升级
-    [/^Boost all (.+) Generators based on time spent this (.+)$/, '根据本次$2经过的时间，增加$1的所有发生器产量'], //升级
-    [/^Boost the Production Boost of Generators per 10 Levels$/, '增加每10级发生器的产量'], //升级
-    [/^Boost the Prestige Reward you get per second$/, '增加每秒获得的转生奖励'], //不定性，前置
-    [/^Boost (.+)$/, '增加$1'], //升级
-    [/^All (.+) Generators are stronger based on time spent this (.+)$/, '根据本次$2经过的时间，$1的所有发生器产量变得更高'], //升级
-    [/^Inactive →(.*)s$/, '未生效 →$1秒'], //自动器
-    [/^(.*)s →(.*)s$/, '$1秒 →$2秒'], //自动器
     [/^Volatility \(persistence\) allows you to make earlier Layers non-volatile. Non-volatile Layers(\s+)never reset and reward a percentage of the its prestige reward every second.$/, '不定性(持续性)可以使更早出现的层级变得不再不定。不再不定的层级永不重置，它们将每秒给予一部分转生奖励。'], //不定性
-    [/^All Generator and Upgrade Prices are raised to the Power of (.+). Power Effects are raised to the Power of(.*)$/, '所有能量发生器和升级的价格变为该数值为幂的指数: $1。能量效果变为该数值为幂的指数:$2'], //挑战
-    [/^Reward: All Power Generators are x(.+) stronger$/, '奖励: 所有能量发生器的效果变为$1倍'], //挑战
-    [/^Reward: All Generator Multiplicators per 10 Levels are \+(.+) better$/, '奖励: 所有发生器倍率每10级增加$1'], //挑战
-    [/^Reward: Prestige Reward of Layer (.+) is x(.+) higher$/, '奖励: 层级$1的转生奖励变为$2倍'], //挑战
-    [/^Reward: All Alpha Generators are x(.+) stronger$/, '奖励: 阿尔法发生器的效果变为$1倍'], //挑战
     [/^In Omega Layers, your Goal is to produce Resources \(e.g. α\) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
     [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '了，它会每秒产生1α。继续购买发生器可以提升α产量。'], //教程
     [/^.(\s+)Browser Storage isn't the most reliable thing. You may share Export Codes in my Discord Server, if you want.$/, '。浏览器缓存不一定可靠。如果有需要，您也可以与他人分享存档。'], //教程

@@ -164,7 +164,7 @@ class ReStackLayer
 
     respecPermUpgrades()
     {
-        if(game.settings.confirmations && (!confirm("Are you sure you want to respec?") || this.allPermUpgradesBought()))
+        if(game.settings.confirmations && (!confirm("您确定要洗点吗？") || this.allPermUpgradesBought()))
         {
             return;
         }
@@ -181,7 +181,7 @@ class ReStackLayer
 
     respecUpgradeTree()
     {
-        if(game.settings.confirmations && !confirm("Are you sure you want to respec? This will do a ReStack without reward and you won't get any Layer Coins back."))
+        if(game.settings.confirmations && !confirm("您确定要洗点吗？您将自动进行一次重新堆叠，而且不会获得任何层级币。"))
         {
             return;
         }
@@ -197,7 +197,7 @@ class ReStackLayer
 
     restack(reward = true)
     {
-        if(reward && game.settings.confirmations && !confirm("Are you sure you want to ReStack? You will lose all progress in exchange for Layer Coins."))
+        if(reward && game.settings.confirmations && !confirm("您确定要进行重新堆叠吗？您将失去目前的所有进度以换取层级币。"))
         {
             return;
         }

@@ -9,11 +9,11 @@ Vue.component("layer-statistics", {
         }
     },
     template: `<div class="layer-statistics">
-<p>You have {{formatNumber(layer.resource, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></p>
-<p>You have made a total of {{formatNumber(layer.totalResource, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></p>
-<p>The highest you ever had is {{formatNumber(layer.maxResource, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></p>
-<p>You spent {{formatTime(layer.timeSpent)}} this <resource-name :layerid="layer.layer"></resource-name></p>
-<p v-if="layer.layer > 0">You have gone <resource-name :layerid="layer.layer"></resource-name> {{formatTimesReset(layer.timesReset)}} Times</p>
-<p v-if="layer.layer > 0 && layer.hasPower()">You have {{formatNumber(layer.power, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name>-Power</p>
+<p>您拥有 {{formatNumber(layer.resource, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></p>
+<p>您总共拥有 {{formatNumber(layer.totalResource, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></p>
+<p>您最高拥有过 {{formatNumber(layer.maxResource, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></p>
+<p>您经过了 {{formatTime(layer.timeSpent)}} 于此 <resource-name :layerid="layer.layer"></resource-name></p>
+<p v-if="layer.layer > 0">您已经进行过 <resource-name :layerid="layer.layer"></resource-name> 转生 {{formatTimesReset(layer.timesReset)}} 次</p>
+<p v-if="layer.layer > 0 && layer.hasPower()">您拥有 {{formatNumber(layer.power, 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name>-能量</p>
 </div>`
 });

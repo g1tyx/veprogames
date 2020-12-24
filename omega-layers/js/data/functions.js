@@ -313,7 +313,7 @@ var functions = {
             {
                 document.querySelector("#loading > p").innerHTML = "Applying Offline Progress...";
                 simulateGameTime(t);
-                functions.createNotification(new Notification(NOTIFICATION_STANDARD, "You were offline for " + functions.formatTime(t)));
+                functions.createNotification(new Notification(NOTIFICATION_STANDARD, "您总共离线了 " + functions.formatTime(t)));
             }
         }
 
@@ -324,8 +324,8 @@ var functions = {
         let confirmations = 0;
         do
         {
-            if(!confirm("Are you " + "really ".repeat(confirmations) + "sure? There is no reward. " +
-                "Click " + (3 - confirmations) + " more " + (confirmations >= 2 ? "time" : "times") + " to confirm."))
+            if(!confirm("您" + "真的".repeat(confirmations) + "确定吗？这样做不会获得任何奖励。" +
+                "再点击" + (3 - confirmations) + "次以防止误操作。"))
             {
                 return;
             }

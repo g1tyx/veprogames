@@ -35,16 +35,16 @@ class Challenge
         switch (this.effectType)
         {
             case CHALLENGE_EFFECT_UPGRADESTRENGTH_SIMPLEBOOST:
-                return "All Upgrade and Simple Boost Effects are raised to the Power of " + this.applyEffect().toFixed(2);
+                return "所有升级和简单加成的效果变为原数值\^" + this.applyEffect().toFixed(2);
             case CHALLENGE_EFFECT_PRICES_POWER:
-                return "All Generator and Upgrade Prices are raised to the Power of " + this.applyEffect().toFixed(2) + ". " +
-                    "Power Effects are raised to the Power of " + this.applyEffect().pow(-1).toFixed(2);
+                return "所有能量发生器和升级的价格变为原数值\^" + this.applyEffect().toFixed(2) + "。" +
+                    "能量效果变为原数值\^" + this.applyEffect().pow(-1).toFixed(2);
             case CHALLENGE_EFFECT_GENMULTI:
-                return "All Generator Multipliers are raised to the Power of " + this.applyEffect().toFixed(2);
+                return "所有发生器倍率变为原数值\^" + this.applyEffect().toFixed(2);
             case CHALLENGE_EFFECT_PRESTIGEREWARD:
-                return "All Prestige Rewards are raised to the Power of " + this.applyEffect().toFixed(2);
+                return "所有转生奖励变为原数值\^" + this.applyEffect().toFixed(2);
             default:
-                return "That's weird. Something's different..."
+                return "奇怪，有什么东西不一样了……"
         }
     }
 
@@ -53,15 +53,15 @@ class Challenge
         switch (this.rewardType)
         {
             case CHALLENGE_REWARD_POWERGENERATORS:
-                return "All Power Generators are x" + functions.formatNumber(this.applyReward(), 2, 2) + " stronger";
+                return "所有能量发生器的效果变为 " + functions.formatNumber(this.applyReward(), 2, 2) + " 倍";
             case CHALLENGE_REWARD_GENMULTI:
-                return "All Generator Multiplicators per 10 Levels are +" + functions.formatNumber(this.applyReward(), 3, 3) + " better";
+                return "所有发生器倍率每10级增加" + functions.formatNumber(this.applyReward(), 3, 3);
             case CHALLENGE_REWARD_PRESTIGEREWARD:
-                return "Prestige Reward of Layer " + PrestigeLayer.getNameForLayer(this.cfg.layerid) + " is x" + functions.formatNumber(this.applyReward(), 2, 2) + " higher";
+                return "层级 " + PrestigeLayer.getNameForLayer(this.cfg.layerid) + " 的转生奖励变为 " + functions.formatNumber(this.applyReward(), 2, 2) + " 倍";
             case CHALLENGE_REWARD_GENMULTI_ABS:
-                return "All Alpha Generators are x" + functions.formatNumber(this.applyReward(), 2, 2) + " stronger";
+                return "阿尔法发生器的效果变为" + functions.formatNumber(this.applyReward(), 2, 2) + " 倍";
             default:
-                return "A Cake."
+                return "一块蛋糕。"
         }
     }
 

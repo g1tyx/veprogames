@@ -442,7 +442,7 @@ class PrestigeLayer
 
     respecUpgradeTree()
     {
-        if(game.settings.confirmations && !confirm("Are you sure you want to Respec?"))
+        if(game.settings.confirmations && !confirm("您确定要洗点吗？"))
         {
             return;
         }

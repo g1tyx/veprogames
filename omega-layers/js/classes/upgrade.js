@@ -47,7 +47,7 @@ class AbstractUpgrade
     {
         if(this.level.eq(this.maxLevel))
         {
-            return "Max";
+            return "最大";
         }
         return functions.formatNumber(this.currentPrice(), 2, 0, 1e9);
     }
@@ -105,28 +105,28 @@ class LayerUpgrade extends AbstractUpgrade
         switch (this.type)
         {
             case UPGRADE_RESOURCE:
-                return "Boost " + this.layerBoost.name + " Production";
+                return "增加 " + this.layerBoost.name + " 的产量";
             case UPGRADE_GENERATOR:
             case UPGRADE_POWERGENERATOR:
                 let genNames = [];
-                let genName = this.type === UPGRADE_GENERATOR ? "Generators" : "Power Generators";
+                let genName = this.type === UPGRADE_GENERATOR ? "发生器" : "能量发生器";
                 for(let id of this.cfg.generators)
                 {
                     genNames.push(this.layerBoost[this.type === UPGRADE_GENERATOR ? "generators" : "powerGenerators"][id].name);
                 }
-                return "Boost Production of " + genName + " " + genNames.join(" and ");
+                return "以下" + genName + "产量增加: " + genNames.join(" 与 ");
             case UPGRADE_GENMULTI:
-                return "Boost the Production Boost of Generators per 10 Levels";
+                return "增加每10级发生器的产量";
             case UPGRADE_PRESTIGEREWARD:
-                return "Boost Prestige Reward on Layer " + this.layerBoost.name;
+                return "以下层级转生奖励增加: " + this.layerBoost.name;
             case UPGRADE_RESOURCE_TIMELAYER:
-                return "Boost " + this.layerBoost.name + " Production based on Time spent this " + this.layerCost.name;
+                return "根据本次 " + this.layerCost.name + " 经过的时间，增加 " + this.layerBoost.name + " 的产量";
             case UPGRADE_GENERATOR_TIMELAYER:
-                return "Boost all " + this.layerBoost.name + " Generators based on time spent this " + this.layerCost.name;
+                return "根据本次 " + this.layerCost.name + " 经过的时间，增加 " + this.layerBoost.name + " 的所有发生器产量";
             case UPGRADE_POWERGENERATOR_TIMELAYER:
-                return "All " + this.layerBoost.name + " Generators are stronger based on time spent this " + this.layerCost.name;
+                return "根据本次 " + this.layerCost.name + " 经过的时间， " + this.layerBoost.name + " 的所有发生器产量变得更高";
             default:
-                return "It boosts stuff. Sadly I have no idea what exactly it boosts :(";
+                return "它可以使其他的东西变得更强。但很遗憾您还不知道它能使什么变得更强 :(";
         }
     }
 
@@ -406,8 +406,8 @@ var effectDisplayTemplates = {
     {
         return function()
         {
-            let thisVal = this.level.eq(0) ? "Inactive" : this.apply().toFixed(2) + " s";
-            let nextVal = this.getEffect(this.level.add(1)).toFixed(2) + " s";
+            let thisVal = this.level.eq(0) ? "未生效" : this.apply().toFixed(2) + " 秒";
+            let nextVal = this.getEffect(this.level.add(1)).toFixed(2) + " 秒";
             if(this.level.eq(this.maxLevel))
             {
                 return thisVal;
