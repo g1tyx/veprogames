@@ -85,7 +85,7 @@ var cnItems = {
     'Gain more Aleph based on the log(log(α)) you have': '根据拥有的log(log(α))，增加阿列夫的获取数量',
     'The β Prestige Formula is better': 'β转生的公式变得更好',
     'Increase the Prestige Reward of all Layers': '增加所有层级的转生奖励',
-    'Increase the exponential difference of boosts between layers, resulting in a large boost!': '使各层之间的加成指数变得更高，从而增加加成总量！',
+    'Increase the exponential difference of boosts between layers, resulting in a large boost!': '使层级指数因子变得更高，从而增加加成总量！',
 
     //挑战
     'That\'s weird. Something\'s different...': '奇怪，有什么东西不一样了……',
