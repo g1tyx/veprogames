@@ -60,7 +60,6 @@ var cnItems = {
 
     //升级
     'Max': '最大',
-    'Boost': '增加',
     'It boosts stuff. Sadly I have no idea what exactly it boosts :(': '它可以使其他的东西变得更强。但很遗憾您还不知道它能使什么变得更强 :(',
 
     //自动器
@@ -124,6 +123,7 @@ var cnItems = {
     'I have woken up. I am now aware that a new Layer is just another layer. It is time to become meta.': '我已经醒悟了。一个新的层级不过就是层级罢了。是时候成为元了。',
 
     //成就
+    //Achievement Get: 成就名称
     'Starting Out': '启程出发',
     'The beginning of Idling': '放置之始',
     'Polynomial Growth': '多项式增长',
@@ -255,6 +255,7 @@ var cnItems = {
 
     //教程
     'Getting Started': '开始吧',
+    'To start, click the  "+1 α" button until you have 10 α. With 10 α, you can buy a Generator α': '首先，先点击 +1α 按钮，直到您一共获得了10α。这样您就可以购买发生器α',
     'Export & Import': '导出和导入存档',
     'In the Settings Menu, you can Export and Import your Game, allowing you to keep it somewhere safe.': '在设置菜单中，您可以导出和导入您的存档，以备不时之需。',
     'It is recommended to Export often': '强烈建议您经常导出备份存档',
@@ -263,6 +264,9 @@ var cnItems = {
     'Power Generators': '能量发生器',
     'Power Generators work like Generators, but they produce Power. Power boosts other Layers and help ramping those numbers up!': '能量发生器跟发生器类似，但它们产生的是能量。能量可以提升其他层级的效果，帮助它们的数字增长到更大！',
     'Layer Exponential Factor': '层级指数因子',
+    'With a Layer Exponential Factor of 24, it would be: xe10, xe240, xe5760, ...': '层级指数因子为24时，则是: e10倍，e240倍，e5760倍，依此类推……',
+    'With a Layer Exponential Factor of 30, it would be: xe10, xe300, xe9000, ...': '层级指数因子为30时，则是: e10倍，e300倍，e9000倍，依此类推……',
+    'This applies to basically everything like certain challenge rewards, Upgrade Effects and Power Boosts.': '它几乎对所有相关参数都有效，例如特定的挑战奖励，升级效果及能量加成等。',
     'Meta': '元',
 
     //设置
@@ -378,6 +382,25 @@ var cnPrefix = {
     "Buy the ReStack Tree Upgrade in Row 5": "购买第5行的重新堆叠树升级", //成就
     "Reach Layer 1e": "到达层级1e", //成就
     "Reach Layer ~1.8e": "到达层级约1.8e", //成就
+    "                   ": "",
+    "                  ": "",
+    "                 ": "",
+    "                ": "",
+    "               ": "",
+    "              ": "",
+    "             ": "",
+    "            ": "",
+    "           ": "",
+    "          ": "",
+    "         ": "",
+    "        ": "",
+    "       ": "",
+    "      ": "",
+    "     ": "",
+    "    ": "",
+    "   ": "",
+    "  ": "",
+    " ": "",
 }
 
 //需处理的后缀
@@ -391,6 +414,26 @@ var cnPostfix = {
     "/s": "/s",
     ")": ")",
     "%": "%",
+    "                   ": "",
+    "                  ": "",
+    "                 ": "",
+    "                ": "",
+    "               ": "",
+    "              ": "",
+    "             ": "",
+    "            ": "",
+    "           ": "",
+    "          ": "",
+    "         ": "",
+    "        ": "",
+    "       ": "",
+    "      ": "",
+    "     ": "",
+    "    ": "",
+    "   ": "",
+    "  ": "",
+    " ": "",
+    "\n": "",
     " Boost on": "倍产量加成: ", //主界面及层级等
     " Production": "的产量", //升级
     " Achievements.": "个成就。", //升级
@@ -470,7 +513,6 @@ var cnRegReplace = new Map([
     [/^Reward: Prestige Reward of Layer (.+) is x(.+) higher$/, '奖励: 层级$1的转生奖励变为$2倍'], //挑战
     [/^Reward: All Alpha Generators are x(.+) stronger$/, '奖励: 阿尔法发生器的效果变为$1倍'], //挑战
     [/^In Omega Layers, your Goal is to produce Resources \(e.g. α\) and Prestige for higher Resources. You can buy(\s+)things like Generators and Upgrades to accomplish that.$/, '在欧米茄层级中，您的目标是获取资源(例如α)，然后转生以获取更高级的资源。您可以通过购买发生器和升级来达到这个目标。'], //教程
-    [/^(\s*)To start, click the(\s+)"+1 α" button until you have 10 α. With 10 α, you can buy a Generator α$/, '首先，先点击 +1α 按钮，直到您一共获得了10α。这样您就可以购买发生器α'], //教程
     [/^, which(\s+)produces 1 α every second. Continue buying Generators to increase your α production.$/, '了，它会每秒产生1α。继续购买发生器可以提升α产量。'], //教程
     [/^.(\s+)Browser Storage isn't the most reliable thing. You may share Export Codes in my Discord Server, if you want.$/, '。浏览器缓存不一定可靠。如果有需要，您也可以与他人分享存档。'], //教程
     [/^Generators produce Resources every second or other Generators. The first Generator produces Resources. The 2nd Generator produces(\s+)1st Generators, the 3rd Generator produces 2nd Generators and so on. You buy Generators with Resources$/, '发生器每秒产生资源或其他发生器。第1个发生器产生资源，第2个发生器产生第1个发生器，第3个发生器产生第2个发生器，依此类推。您需要使用资源来购买发生器'], //教程
@@ -480,11 +522,8 @@ var cnRegReplace = new Map([
     [/^If you see a message below the amount of Resource you have, the Layer has a "Simple Boost". Simple Boost boosts the first Alpha Generator, resulting in much higher numbers. The Boost you get is based on the current Resource you(\s+)have.$/, '如果您在拥有的资源数量下方看到一条消息，则说明该层级拥有了 简单加成 。简单加成使第一个阿尔法发生器的效果变得更好，从而使数字变得更大。简单加成的数值与您当前拥有的资源数量有关。'], //教程
     [/^Challenges are a way to increase your production. While active, they pose a penalty to your production, and you have(\s+)to reach a certain goal. When the Goal is reached, you get a reward form completing the Challenge.$/, '通过挑战可以增加产量。当进行挑战时，会对产量造成一定的负面效果，您必须达到特定的目标后才能完成挑战。完成挑战后，您可以获得一定的奖励。'], //教程
     [/^Are you tired of clicking Prestige all the time\? Now you can make layers non-volatile, resulting in them never resetting and instead(\s+)giving a part of their Prestige Reward every second. Later on, Layers can also max themselves automatically.$/, '整天都得手动按转生，您是不是有点烦了？现在您可以使层级不再不定，永不重置了。此后，它们将每秒给予一部分转生奖励。之后，层级还可以自动进行最大化。'], //教程
-    [/^After going δ at least once, you can gain Aleph, allowing you to buy Upgrades that globally boost the game.(\s+)You gain 10x more Aleph for every new Layer you unlock after δ.(\s*)$/, '到达过δ之后，您就可以开始获得阿列夫了，您可以使用它来购买全局生效的升级。在δ之后，每解锁一个新的层级，阿列夫的获取数量就变为之前的10倍。'], //教程
+    [/^After going δ at least once, you can gain Aleph, allowing you to buy Upgrades that globally boost the game.(\s+)You gain 10x more Aleph for every new Layer you unlock after δ.$/, '到达过δ之后，您就可以开始获得阿列夫了，您可以使用它来购买全局生效的升级。在δ之后，每解锁一个新的层级，阿列夫的获取数量就变为之前的10倍。'], //教程
     [/^The Layer Exponential Factor determines the exponential difference between 2 Layers. For example, with a Layer Exponential Factor(\s+)of 22, a Simple Boost of xe10 on a Layer means xe220 on 1 Layer later, xe4840 2 Layers later and so on.$/, '层级指数因子决定了两个层级之间的指数差异。例如，如果层级指数因子为22，一个层级上的简单加成为e10倍，则下一个层级的简单加成变为e220倍，下两个层级的简单加成变为e4840倍，依此类推。'], //教程
-    [/^(\s*)With a Layer Exponential Factor of 24, it would be: xe10, xe240, xe5760, ...$/, '层级指数因子为24时，则是: e10倍，e240倍，e5760倍，依此类推……'], //教程
-    [/^(\s*)With a Layer Exponential Factor of 30, it would be: xe10, xe300, xe9000, ...$/, '层级指数因子为30时，则是: e10倍，e300倍，e9000倍，依此类推……'], //教程
-    [/^(\s*)This applies to basically everything like certain challenge rewards, Upgrade Effects and Power Boosts.(\s*)$/, '它几乎对所有相关参数都有效，例如特定的挑战奖励，升级效果及能量加成等。'], //教程
     [/^Upgrade Trees provide time-based Upgrades. You have to pick a path while buying them, but you can respec to pick a new one. This(\s+)won't give back spent resource! Automators don't assume a path, so you will have to pick one manually.$/, '升级树提供跟时间有关的升级。您只能从多条路径中选择一条，但您可以在洗点后重新选择一条。请注意，洗点不会返还任何资源！自动器不会选择路径，所以您需要手动先选择一条，然后自动器才会生效。'], //教程
     [/^After unlocking κ, you are able to ReStack. This resets all progress so far in exchange for Layer Coins, which can be spent(\s+)on powerful Upgrades. If you feel like you took the wrong Path on the permanent Upgrades, you can respec. You will get all spent Layer Coins back but you do(\s+)a ReStack without any rewards. ReStack yields 10x more Layer Coins for every new Layer unlocked.$/, '解锁κ以后，您就可以进行重新堆叠了。这将重置之前的所有进度，但您可以获得层级币，您可以用它来购买一些强大的升级。如果您觉得自己选择了错误的永久升级路径，您可以进行洗点。洗点后将全额返还所有层级币，但您将自动进行一次无奖励的重新堆叠。每解锁一个新的层级，层级币获取数量就变为之前的10倍。'], //教程
     [/^You just woke up from the Layer dream and realized that a new Layer is just another Layer. You can now buy Upgrades to increase your Resource(\s+)multiplier and climb Layers faster. ReStack is still available, so check that out! There is a new Upgrade Tree waiting to be upgraded.$/, '您已经从层级的幻梦中苏醒过来，现在对您来说，一个新的层级不过就是层级罢了。您现在可以购买增加资源倍率的升级了，它们可以使您更快地提升层级。重新堆叠仍然有效，请注意这一点！同时也出现了一个新的升级树。'], //教程
