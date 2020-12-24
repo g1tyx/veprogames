@@ -123,7 +123,6 @@ var cnItems = {
     'I have woken up. I am now aware that a new Layer is just another layer. It is time to become meta.': '我已经醒悟了。一个新的层级不过就是层级罢了。是时候成为元了。',
 
     //成就
-    //Achievement Get: 成就名称
     'Starting Out': '启程出发',
     'The beginning of Idling': '放置之始',
     'Polynomial Growth': '多项式增长',
