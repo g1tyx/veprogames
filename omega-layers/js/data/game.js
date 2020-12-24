@@ -118,7 +118,7 @@ var game = {
         new Achievement("该停下来了吧！(并不)", "到达 ζ", "ζ", () => game.layers[5] && game.layers[5].timesReset > 0),
         new Achievement("到游戏末期了吗？", "到达 1e1000000000 α", "α", () => game.layers[0] && game.layers[0].resource.gte("1ee9")),
         new Achievement("温度", "到达 θ", "θ", () => game.layers[7] && game.layers[7].timesReset > 0),
-        new Achievement("叠出一片新天地！", "ReStack", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.restackLayer.timesReset > 0),
+        new Achievement("叠出一片新天地！", "进行重新堆叠", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.restackLayer.timesReset > 0),
         new Achievement("半 λ 条 λ 命", "到达 λ", "λ", () => game.layers[10] && game.layers[10].timesReset > 0),
         new Achievement("见者有份", "拥有7800000000层级币", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.restackLayer.layerCoins.gte(7.8e9)),
         new Achievement("层级的存在意义是什么？", "购买元升级", "<img alt=\"LC\" class=\"inline\" src=\"images/layercoin.svg\"/>", () => game.restackLayer.metaUpgrade.level.gt(0)),
