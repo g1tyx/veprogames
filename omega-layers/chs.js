@@ -61,7 +61,6 @@ var cnItems = {
     //升级
     'Max': '最大',
     'Boost': '增加',
-    'Boost the Production Boost of Generators per 10 Levels': '增加每10级发生器的产量',
     'It boosts stuff. Sadly I have no idea what exactly it boosts :(': '它可以使其他的东西变得更强。但很遗憾您还不知道它能使什么变得更强 :(',
 
     //自动器
@@ -75,7 +74,6 @@ var cnItems = {
     //不定性
     'Make the next Layer non-volatile': '使下一层不再不定',
     'None → α': '无 → α',
-    'Boost the Prestige Reward you get per second': '增加每秒获得的转生奖励',
     'The next Layer is maxed automatically each tick': '使下一层每个时刻自动最大化',
 
     //阿列夫升级
@@ -464,6 +462,8 @@ var cnRegReplace = new Map([
     [/^and thus advancing (.+) Layers per second$/, '因此每秒前进$1个层级'], //主界面及层级等
     [/^Boost (.+) Production based on Time spent this (.+)$/, '根据本次$2经过的时间，增加$1的产量'], //升级
     [/^Boost all (.+) Generators based on time spent this (.+)$/, '根据本次$2经过的时间，增加$1的所有发生器产量'], //升级
+    [/^Boost the Production Boost of Generators per 10 Levels$/, '增加每10级发生器的产量'], //升级
+    [/^Boost the Prestige Reward you get per second$/, '增加每秒获得的转生奖励'], //不定性，前置
     [/^Boost (.+)$/, '增加$1'], //升级
     [/^All (.+) Generators are stronger based on time spent this (.+)$/, '根据本次$2经过的时间，$1的所有发生器产量变得更高'], //升级
     [/^Inactive →(.*)s$/, '未生效 →$1秒'], //自动器
