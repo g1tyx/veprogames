@@ -359,33 +359,31 @@ var cnPrefix = {
     "+": "+",
     " ": " ",
     ": ": "： ",
-    "\n": "",
-    "and ": "与",
+    "You were offline for": "您总共离线了", //主界面及层级等
+    "You have made a total of": "您总共拥有", //主界面及层级等
+    "You have gone": "您已经进行过", //主界面及层级等
+    "You have unlocked ": "您解锁了", //主界面及层级等
+    "You have approx.": "您大概拥有", //主界面及层级等
+    "You have": "您拥有", //主界面及层级等
+    "Get +": "可获得", //主界面及层级等
+    "The highest you ever had is": "您最高拥有过", //主界面及层级等
+    "You are on Layer": "您在层级", //主界面及层级等
+    "You get": "您可获得", //主界面及层级等
+    ", translated to a x": "，因此获得了对以下生效的", //主界面及层级等
+    "Boost on ": "", //升级
+    "Boost Production of Generators ": "以下发生器产量增加: ", //升级
+    "Boost Production of Power Generators ": "以下能量发生器产量增加: ", //升级
+    "Boost Prestige Reward on Layer ": "以下层级转生奖励增加: ", //升级
+    "and ": "与", //升级
+    "All Upgrade and Simple Boost Effects are raised to the Power of": "所有升级和简单加成的效果变为该数值为幂的指数:", //挑战
+    "All Generator Multipliers are raised to the Power of": "所有发生器倍率变为该数值为幂的指数:", //挑战
+    "All Prestige Rewards are raised to the Power of": "所有转生奖励变为该数值为幂的指数:", //挑战
     "Have 1 ": "拥有1个", //成就
     "Have over 1,000 ": "拥有超过1000个", //成就
     "Reach Layer 1000": "到达层级1000", //成就
-    "Buy the ReStack Tree Upgrade in Row 5": "购买第5行的重新堆叠树升级",
+    "Buy the ReStack Tree Upgrade in Row 5": "购买第5行的重新堆叠树升级", //成就
     "Reach Layer 1e": "到达层级1e", //成就
     "Reach Layer ~1.8e": "到达层级约1.8e", //成就
-    "                   ": "",
-    "                  ": "",
-    "                 ": "",
-    "                ": "",
-    "               ": "",
-    "              ": "",
-    "             ": "",
-    "            ": "",
-    "           ": "",
-    "          ": "",
-    "         ": "",
-    "        ": "",
-    "       ": "",
-    "      ": "",
-    "     ": "",
-    "    ": "",
-    "   ": "",
-    "  ": "",
-    " ": "",
 }
 
 //需处理的后缀
@@ -399,26 +397,9 @@ var cnPostfix = {
     "/s": "/s",
     ")": ")",
     "%": "%",
-    "                   ": "",
-    "                  ": "",
-    "                 ": "",
-    "                ": "",
-    "               ": "",
-    "              ": "",
-    "             ": "",
-    "            ": "",
-    "           ": "",
-    "          ": "",
-    "         ": "",
-    "        ": "",
-    "       ": "",
-    "      ": "",
-    "     ": "",
-    "    ": "",
-    "   ": "",
-    "  ": "",
-    " ": "",
-    "\n": "",
+    " Boost on": "倍产量加成: ", //主界面及层级等
+    " Production": "的产量", //升级
+    " Achievements.": "个成就。", //升级
 }
 
 //需排除的，正则匹配
@@ -475,37 +456,19 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
-    [/^You were offline for(.*)$/, '您总共离线了$1'], //主界面及层级等
-    [/^You have made a total of(.*)$/, '您总共拥有$1'], //主界面及层级等
-    [/^You have gone(.*)$/, '您已经进行过$1'], //主界面及层级等
-    [/^You have unlocked (.+) \/ (.+) Achievements.$/, '一共有$2个成就，您解锁了其中的$1个成就。'], //成就，前置
-    [/^You have approx.(.*)$/, '您大概拥有$1'], //主界面及层级等
-    [/^You have(.*)$/, '您拥有$1'], //主界面及层级等
-    [/^Get \+(.*)$/, '可获得$1'], //主界面及层级等
     [/^Power,(\s+)translated to a$/, '能量，因此增加了'], //主界面及层级等
-    [/^The highest you ever had is(.*)$/, '您最高拥有过$1'], //主界面及层级等
     [/^You spent (.+) this(.*)$/, '您经过了$1于此$2'], //主界面及层级等
     [/^(?!Go)(.+) Times$/, '转生$1次'], //主界面及层级等
-    [/^You are on Layer(.*)$/, '您在层级$1'], //主界面及层级等
     [/^Your Resource multiplies by x(.+) each second$/, '您的资源倍率每秒变为$1倍'], //主界面及层级等
     [/^and thus advancing (.+) Layers per second$/, '因此每秒前进$1个层级'], //主界面及层级等
-    [/^You get(.*)$/, '您可获得$1'], //主界面及层级等
-    [/^, translated to a x(.+) Boost on$/, '，因此获得了对以下生效的$1倍产量加成: '], //主界面及层级等
-    [/^Boost on (.+) Production$/, '$1的产量'], //升级
-    [/^Boost (.+) Production$/, '增加$1的产量'], //升级
-    [/^Boost Production of Generators (.+)$/, '以下发生器产量增加: $1'], //升级
-    [/^Boost Production of Power Generators (.+)$/, '以下能量发生器产量增加: $1'], //升级
-    [/^Boost Prestige Reward on Layer (.+)$/, '增加层级$1的转生奖励'], //升级
+    [/^Boost (.+)$/, '增加$1'], //升级
     [/^Boost (.+) Production based on Time spent this (.+)$/, '根据本次$2经过的时间，增加$1的产量'], //升级
     [/^Boost all (.+) Generators based on time spent this (.+)$/, '根据本次$2经过的时间，增加$1的所有发生器产量'], //升级
     [/^All (.+) Generators are stronger based on time spent this (.+)$/, '根据本次$2经过的时间，$1的所有发生器产量变得更高'], //升级
     [/^Inactive →(.*)s$/, '未生效 →$1秒'], //自动器
     [/^(.*)s →(.*)s$/, '$1秒 →$2秒'], //自动器
     [/^Volatility \(persistence\) allows you to make earlier Layers non-volatile. Non-volatile Layers(\s+)never reset and reward a percentage of the its prestige reward every second.$/, '不定性(持续性)可以使更早出现的层级变得不再不定。不再不定的层级永不重置，它们将每秒给予一部分转生奖励。'], //不定性
-    [/^All Upgrade and Simple Boost Effects are raised to the Power of(.*)$/, '所有升级和简单加成的效果变为该数值为幂的指数:$1'], //挑战
     [/^All Generator and Upgrade Prices are raised to the Power of (.+). Power Effects are raised to the Power of(.*)$/, '所有能量发生器和升级的价格变为该数值为幂的指数: $1。能量效果变为该数值为幂的指数:$2'], //挑战
-    [/^All Generator Multipliers are raised to the Power of(.*)$/, '所有发生器倍率变为该数值为幂的指数:$1'], //挑战
-    [/^All Prestige Rewards are raised to the Power of(.*)$/, '所有转生奖励变为该数值为幂的指数:$1'], //挑战
     [/^Reward: All Power Generators are x(.+) stronger$/, '奖励: 所有能量发生器的效果变为$1倍'], //挑战
     [/^Reward: All Generator Multiplicators per 10 Levels are \+(.+) better$/, '奖励: 所有发生器倍率每10级增加$1'], //挑战
     [/^Reward: Prestige Reward of Layer (.+) is x(.+) higher$/, '奖励: 层级$1的转生奖励变为$2倍'], //挑战
@@ -528,5 +491,5 @@ var cnRegReplace = new Map([
     [/^This Number is randomly generated -> (.+). If it's above 1,000, consider yourself lucky!$/, '此数字为随机生成的 -> $1。如果它大于1000，说明您的运气相当好！'], //滚动新闻
     [/^get Layer (.+) now \[working 2020\]$/, '点此直接解锁$1层级[2020年内有效]'], //滚动新闻
     [/^(.+) α\? That's rookie numbers$/, '$1α？这数字弱爆了'], //滚动新闻
-    [/^Motto of the Day: (.+)$/, '每日箴言: (译者注: 作者没有吃药，这边的内容无法翻译，各位就当这里不存在，完毕)'], //滚动新闻
+    [/^Motto of the Day: (.+)$/, '每日箴言: $1'], //滚动新闻
 ]);
