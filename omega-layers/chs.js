@@ -464,6 +464,7 @@ var cnRegReplace = new Map([
     [/^and thus advancing (.+) Layers per second$/, '因此每秒前进$1个层级'], //主界面及层级等
     [/^Boost (.+) Production based on Time spent this (.+)$/, '根据本次$2经过的时间，增加$1的产量'], //升级
     [/^Boost all (.+) Generators based on time spent this (.+)$/, '根据本次$2经过的时间，增加$1的所有发生器产量'], //升级
+    [/^Boost (.+)$/, '增加$1'], //升级
     [/^All (.+) Generators are stronger based on time spent this (.+)$/, '根据本次$2经过的时间，$1的所有发生器产量变得更高'], //升级
     [/^Inactive →(.*)s$/, '未生效 →$1秒'], //自动器
     [/^(.*)s →(.*)s$/, '$1秒 →$2秒'], //自动器
