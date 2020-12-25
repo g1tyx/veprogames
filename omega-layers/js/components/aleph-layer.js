@@ -22,7 +22,7 @@ Vue.component("aleph-layer", {
     template: `<div class="aleph-layer">
 <div class="resource">
     <p>您拥有 {{formatNumber(aleph.aleph, 2, 2, 1e9)}} <span class="aleph">&aleph;</span></p>
-    <p>您可获得 {{formatNumber(aleph.getAlephGain(), 2, 2, 1e9)}} <span class="aleph">&aleph;</span>/s</p>
+    <p>您每秒可获得 {{formatNumber(aleph.getAlephGain(), 2, 2, 1e9)}} <span class="aleph">&aleph;</span></p>
 </div>
 <div class="boosts">
     <div v-if="canProduceAleph">

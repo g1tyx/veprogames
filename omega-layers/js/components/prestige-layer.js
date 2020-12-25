@@ -94,7 +94,7 @@ Vue.component("prestige-layer", {
 <p v-if="layer.hasSimpleBoost()" class="power-text">因此 &alpha; 产量变为 <span class="big-number">x{{formatNumber(layer.getSimpleBoost(), 2, 2)}}</span> 倍</p>
 <div class="resource-button" v-if="layer.hasResourceButton"><button @click="layer.addResource(layer.getResourceButtonAmount())">+{{formatNumber(layer.getResourceButtonAmount(), 2, 0, 1e9)}} <resource-name :layerid="layer.layer"></resource-name></button></div>
 <button v-if="nextLayer && (layer.canGenerateNextLayer() || nextLayer.timesReset > 0)" :disabled="!layer.canPrestige()" class="prestige" @click="layer.prestige()">
-    <span v-if="layer.isNonVolatile()">+{{formatNumber(layer.getPrestigeAmountPerSecond(), 2, 2)}} <resource-name :layerid="nextLayer.layer"></resource-name>/s</span>
+    <span v-if="layer.isNonVolatile()">每秒+{{formatNumber(layer.getPrestigeAmountPerSecond(), 2, 2)}} <resource-name :layerid="nextLayer.layer"></resource-name></span>
     <span v-else>
         <span v-if="layer.canPrestige()">转生以到达 <resource-name :layerid="nextLayer.layer"></resource-name><br/>可获得 {{formatNumber(layer.getPrestigeAmount(), 2, 0)}} <resource-name :layerid="nextLayer.layer"></resource-name></span>
         <span v-else>需要到达 {{formatNumber(layer.getPrestigeLimit(), 2, 0)}} <resource-name :layerid="layer.layer"></resource-name></span>
