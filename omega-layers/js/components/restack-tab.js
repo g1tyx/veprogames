@@ -41,6 +41,6 @@ Vue.component("restack-tab", {
 </div>
 <button class="restack" @click="restack.restack()" :disabled="!canRestack" v-if="!isMeta">重新堆叠<br/>+{{formatNumber(restack.getRestackGain(), 2, 0)}} <img alt="LC" class="inline" src="images/layercoin.svg"/></button>
 <p v-if="showMetaHint && !restack.canMeta()">先到达 <resource-name :layerid="23"></resource-name> 后再来吧</p>
-<button v-if="restack.canMeta() && !isMeta" @click="restack.goMeta()" class="meta">我已经醒悟了。一个新的层级不过就是层级罢了。是时候成为元了。</button>
+<button v-if="restack.canMeta() && !isMeta" @click="restack.goMeta()" class="meta">我已经醒悟了。一个新的层级不过就是层级罢了。是时候进入元了。</button>
 </div>`
 });
