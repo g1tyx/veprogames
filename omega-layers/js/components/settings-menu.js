@@ -156,7 +156,7 @@ Vue.component("settings-menu", {
 </div>
 <div class="credits">
     <h4>致谢名单(中文版由by22dgb汉化)</h4>
-    <p>感来源：hevipelle制作的反物质维度，dan-simon制作的无限层级</p>
+    <p>灵感来源：hevipelle制作的反物质维度，dan-simon制作的无限层级</p>
     <p>由vue.js和break eternity.js提供的技术支持</p>
 </div>
 </div>`
