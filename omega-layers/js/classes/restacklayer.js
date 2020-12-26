@@ -42,7 +42,7 @@ class ReStackLayer
                     getEffectDisplay: effectDisplayTemplates.numberStandard(0, "+")
                 })
         };
-        this.metaUpgrade = new RestackLayerUpgrade("所有层级的资源乘以秒数",
+        this.metaUpgrade = new RestackLayerUpgrade("所有层级的每秒资源倍率乘以:",
             level => new Decimal(1e10),
             level => 1 + 0.2 * level.toNumber(),{
                 maxLevel: 1
