@@ -333,7 +333,7 @@ var cnExcludePostfix = [
 var cnRegReplace = new Map([
     [/^requires ([\d\.]+) more research points$/, '需要$1个研究点'],
     [/^(\d+) Royal points$/, '$1 皇家点数'],
-    [/^Refresh in (\d+) Matchday\(s$/, '在 $1 个比赛日刷新'],
+    [/^Refresh in (\d+) Matchday\(s$/, '还有 $1 个比赛日刷新(✌️'],
     [/^ x([\d\.]+), DEF x([\d\.]+)$/, ' x$1, 防御 x$2'],
     [/^Have at least (.+) Fans$/, '拥有至少 $1 粉丝'],
     [/^Have at least (.+) \$$/, '拥有至少 $1 \$'],
