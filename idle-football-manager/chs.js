@@ -27,7 +27,7 @@ var cnItems = {
     'Zalgo': '扎尔戈',
     'Team Settings': '团队设置',
     'Adjust the Speed of the Game': '调整游戏速度',
-    'Aggressiveness': '攻击性',
+    'Aggressiveness': '红牌率',
     'always restart': '总是重启',
     'and on new Seasons.': '以及新赛季。',
     'cookies or storage': 'Cookie或本地存储',
@@ -71,7 +71,7 @@ var cnItems = {
     'Refill Team after Match': '赛后补充球员',
     'Social': '社交',
     'Strategy': '策略',
-    'STA': '属性',
+    'STA': '耐力',
     'Move from Team': '离开团队',
     'My Football Club': '我的足球俱乐部',
     'Match Rewards': '比赛奖励',
@@ -167,7 +167,7 @@ var cnItems = {
     '': '',
     'Experiencecreek Runners': '埃里克森奔跑者',
     'Employmentton Runners': '埃普尔顿奔跑者',
-    'AGG': '攻击性',
+    'AGG': '红牌率',
     'Disasterdorf Kickers': '灾难村踢球者',
 
 }
