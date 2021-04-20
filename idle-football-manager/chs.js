@@ -127,7 +127,7 @@ var cnItems = {
     '': '',
     '': '',
     '': '',
-    '': '',
+    'Idle Soccer Manager': '足球经理放置',
     'Join my Discord Server': '加入我的Discord服务器',
     'not': '不会',
     'Note: The Game does': '注意：游戏',

@@ -1,9 +1,9 @@
 app.component("tab-settings", {
     data(){
         return {
-            saveString: "Your savegame will appear here. Keep it somewhere safe! Make sure to backup often.\n" +
-                "Import Game will read the content of this textbox.\n" +
-                "The downloaded File contains the content to be pasted into this text box.",
+            saveString: "你的存档会出现在这里。把它放在安全的地方!确保经常备份。\n" +
+                "导入存档将读取此文本框的内容。\n" +
+                "下载的文件包含要粘贴到此文本框中的内容。",
             team: game.team,
             settings: game.settings
         };
@@ -29,7 +29,7 @@ app.component("tab-settings", {
         },
         hardReset(){
             let t = 3;
-            while(t > 0 && confirm("Are you sure you really want to erase EVERYTHING? There is no reward and no going back! Click " + t + " more time(s) to confirm")){
+            while(t > 0 && confirm("你确定你真的想抹去一切吗?没有奖赏，也没有回头路!点击 " + t + " 次以确认")){
                 t--;
             }
             if(t === 0){
