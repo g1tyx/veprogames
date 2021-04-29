@@ -609,6 +609,11 @@ main{
 
 /*Match*/
 
+.match .time button{
+    display: block;
+    margin: auto;
+}
+
 .match .match-view{
     position: absolute;
     bottom: 5rem;
@@ -843,7 +848,7 @@ main{
 
 .tab-settings textarea{
     width: 70%;
-    height: 400px;
+    height: 200px;
     resize: none;
     margin-top: 1rem;
 }
@@ -959,5 +964,31 @@ main{
 @media (max-width: 1279px){
     .team-management .strategies{
         flex-direction: column;
+    }
+}
+
+@media (max-width: 1024px){
+    body, button, input[type="text"], input[type="number"]{
+        font-size: 13px;
+    }
+
+    .window{
+        width: 500px;
+        min-height: 250px;
+    }
+}
+
+@media(max-height: 680px){
+    .match{
+        padding: 0.5rem;
+    }
+
+    .match .stats{
+        margin: 0;
+    }
+
+    .match-view{
+        width: 65% !important;
+        bottom: 0 !important;
     }
 }
